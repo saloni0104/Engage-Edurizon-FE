@@ -1,0 +1,156 @@
+.buy-prod-profile {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buy-prod-profile-navbar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-left: 20px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input {
+  border-radius: 10px;
+  border: 2px solid #00564d;
+  padding: 10px;
+}
+
+input:focus {
+  border-color: #001614;
+}
+
+#modal-btn,
+#answer-modal-btn {
+  padding: 5px;
+  border-radius: 10px;
+  width: 100%;
+  height: 40px;
+  background-color: #00564d;
+  color: #001614;
+  margin-top: 10px;
+  border: 2px solid #001614;
+  box-shadow: none;
+}
+
+textarea {
+  border: 2px solid #00564d;
+  resize: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+#answer-btn {
+  padding: 5px;
+  width: 50%;
+  border-radius: 5px;
+  border: 2px solid #00564d;
+  background-image: linear-gradient(to right, #000000, #00897b);
+  color: white;
+  height: 40px;
+  margin-top: 10px;
+  width: 50%;
+  box-shadow: none;
+}
+
+#answer-btn:hover {
+  color: white;
+  background-image: linear-gradient(to right, #00897b, #000000);
+  box-shadow: none;
+}
+
+.card-header img {
+  border: 5px solid white !important;
+}
+
+.outside {
+  position: inherit;
+  top: -50%;
+}
+
+.question-card {
+  border-radius: 20px !important;
+  box-shadow: 2px 2px 5px 0px #00564d;
+  transition: 0.3s;
+  background-color: white !important;
+  border: 3px solid #3b615d;
+}
+
+.answer-card {
+  border-radius: 20px !important;
+  box-shadow: 2px 2px 5px 0px #00564d;
+  transition: 0.3s;
+  background-color: white !important;
+  border: 3px solid #66b2b2;
+}
+
+.card-header {
+  border-radius: 20px !important;
+}
+
+.card-footer {
+  border-radius: 20px !important;
+}
+
+.bold {
+  font-weight: bolder;
+  color: black;
+  font-size: 30px;
+}
+
+.profile-pic {
+  margin-bottom: -5px !important;
+}
+
+.name {
+  margin-top: -50px !important;
+}
+
+.card:hover {
+  transform: scale(0.99);
+}
+
+/* post button css */
+.main-btn {
+  padding: 10px;
+  width: 30%;
+  border-radius: 10px;
+  border: 2px solid #00564d;
+  background-image: linear-gradient(to right, #000000, #00897b);
+  color: white;
+  height: 60px;
+  margin-top: 10px;
+  box-shadow: none;
+  font-size:20px
+}
+
+
+@media (max-width: 1000px) {
+  #user-navbar-name {
+    padding-left: 20px;
+  }
+  .card:hover .card:not(:hover) {
+    transform: scale(0.99);
+  }
+
+
+.main-btn {
+  width: 80%;
+  font-size:16px;
+  padding-bottom:15px;
+}
+}
+
+
+
+

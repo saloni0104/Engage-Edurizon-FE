@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script> -->
+    <title>
+        Edurizon | Student Forum
+    </title>
+
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="./css/dashboard.css" rel="stylesheet" />
+    <link href="./css/ask-desk.css" rel="stylesheet" />
+    <link href="./css/notes.css" rel="stylesheet" />
+
+</head>
+
+<body style="background-color:#EBECF1">
+    <div id="fake-modal-container"></div>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue"></div>
+        <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <div id="top-navbar"></div>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-lg">
+                <canvas id="bigDashboardChart"></canvas>
+            </div>
+
+            <div id="note-taking"></div>
+
+            <!-- Ask Desk -->
+            <div class="container-fluid" style="padding-bottom: 187px;">
+                <div class="row" style="padding-top: 30px;">
+                    <div class="col-lg-3 col-md-3"></div>
+                    <div class="col-lg-6 col-md-6">
+                        <input type="text" id="quesSearch" name="" style="
+                      width: 100%;
+                      position: relative;
+                      height: 60px;
+                      font-size: 20px;
+                    " placeholder="Search for question" title="Search for question" />
+                        <i class="fa fa-search" style="
+                      font-size: 20px;
+                      color: #001614;
+                      position: absolute;
+                      transform: translate(-36px, 20px);
+                    "></i>
+                    </div>
+                    <div class="col-lg-4 col-md-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12" style="text-align: center;">
+                        <h5 style="padding-top: 50px;">
+                            Didn't find what you were looking for?
+                        </h5>
+                        <br />
+                        <button type="button" class="main-btn" style="cursor: pointer; text-decoration: none;" data-toggle="modal"
+                            data-target="#askModal">
+                            Post your question here.
+                    </button>
+                    </div>
+                </div>
+
+                <!-- Question Modal -->
+                <div class="modal fade" id="askModal" tabindex="-1" role="dialog" aria-labelledby="askModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="askModalLabel">Post Your Question</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                    id="post-ques-close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <textarea id="postQuest" style="width: 100%; min-height: 50px; border:2px solid #00564d"
+                                    placeholder="Question" title="Post Question"></textarea>
+
+                                <textarea id="postDesc" style="width: 100%; min-height: 100px; border:2px solid #00564d"
+                                    placeholder="Description" title="Description"></textarea>
+
+                            </div>
+                            <div class="modal-footer text-center">
+                                <button type="button" class="btn" id="modal-btn"
+                                    style="background-color: #00564d; color: white;">Post</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="container-fluid my-3 justify-content-center" id="askdesk-content"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="./js/components/commonUtility.js"></script>
+    <!--Sweet alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <script src="./js/pages/student/studentForumPage.js" type="module"></script>
+    <script src="./js/pages/student/studentForumPageUtility.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+    <script src="./js/pages/common/dashboard.js"></script>
+
+</body>
+
+</html>

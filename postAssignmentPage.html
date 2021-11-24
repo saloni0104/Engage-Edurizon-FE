@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>
+        Edurizon | Assignments
+    </title>
+
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="./css/dashboard.css" rel="stylesheet" />
+    <link href="./css/assignments.css" rel="stylesheet" />
+    <link href="./css/gradeAssignmentsPage.css" rel="stylesheet" />
+    <link href="./css/notes.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        function teal(event) {
+            event.target.style.borderColor = "#00564d";
+        }
+    </script>
+
+</head>
+
+<body style="background-color:#E9EAEF">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue"></div>
+        <div class="main-panel" id="main-panel">
+            <div class="top-navbar"></div>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-lg">
+                <canvas id="bigDashboardChart"></canvas>
+            </div>
+
+            <div id="note-taking"></div>
+
+            <div class="col-12 col-md-10 offset-md-1 mt-5">
+                <ul class="nav nav-pills mb-5" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="post-assignment-tab" data-toggle="pill" href="#post-assignment"
+                            role="tab" aria-controls="post-assignment" aria-selected="true">Post Assignments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="view-posted-tab" data-toggle="pill" href="#view-posted"
+                            role="tab" aria-controls="view-posted" aria-selected="false">View Posted Assignments</a>
+                    </li>
+
+                </ul>
+
+
+                <div class="tab-content" id="pills-tabContent">
+                    <!--Post Assignments-->
+
+                    <div class="container mt-3 tab-pane fade show active" id="post-assignment" role="tabpanel"
+                        aria-labelledby="post-assignment-tab">
+                        
+                            <div class="row mt-5">
+                                <div class="col-12 col-md-6 offset-md-3 pt-3 text-center">
+                                    <h3>Post Assignments</h3>
+                                    <p style="margin-top: 10px; margin-bottom: 30px; font-size: 18px;">Please fill the details
+                                        to post an assignment</p>
+                                </div>              
+                            </div>
+            
+                            <div class="row">
+                                <div class="col-lg-4 col-12"></div>
+                                <div class="col-lg-4 col-12">
+                                    <!-- Choose course dropdown -->
+                                    <div class="dropdown">
+                                        <select class="category-btn" style="cursor: pointer" id="coursesList">
+                                            <option value="none" selected disabled hidden>
+                                                Choose Course
+                                            </option>
+                                            <!-- insert dropdown options dynamically -->
+                                        </select>
+                                    </div>
+            
+                                </div>
+                                <div class="col-lg-4 col-12"></div>
+                            </div>
+            
+                            <div class="row" style="margin-top: 50px; ">
+                               
+                                <!-- <div class="col-12 col-lg-3"></div> -->
+                                <div class="col-12 col-md-10 offset-md-1 card" style="box-shadow: 5px 10px #888888">
+                                    <div class="col-12 col-md-10 offset-md-1" style="margin-top: 50px;">
+                                        <label id="ques-title-label">Question Title</label>
+                                        <textarea id="assign-ques-title" placeholder="Type the Question" onfocus="teal(event)"
+                                            style="height: 55px; padding-left: 10px;" title="Post Question"></textarea>
+                                    </div>
+            
+                                    <div class="col-12 col-md-10 offset-md-1" style="margin-top: 15px;">
+                                        <label id="assign-deadline-label">Assignment Deadline:</label><br>
+                                        <input type="date" id="assignment-deadline" onfocus="teal(event)"
+                                            style="background-color: white;min-height: 50px; border:2px solid #00564d; border-radius: 10px; padding-left: 10px;">
+                                    </div>
+            
+                                    <div class="col-12 col-md-10 offset-md-1" style="margin-top: 15px;margin-bottom: 50px;">
+                                        <label id="upload-ques-file-label">Question Upload:</label><br>
+                                        <input type="file" style="display: none;" id="teacher-post-assign" />
+                                        <input type="button" id="ques-file-upload-btn" style="cursor: pointer" value="Choose file"
+                                            style="background-color: white;"
+                                            onclick="document.getElementById('teacher-post-assign').click();">
+                                    </div>
+                                </div>
+                                <!-- <div class="col-12 col-lg-3"></div> -->
+            
+                                <div class="col-12 col-lg-4"></div>
+                                <div class="col-12 col-lg-4">
+                                    <button class="btn" id="teacher-assign-post-btn"
+                                        style="color: white; width: 100%; border-color: #00564d; height: 50px; margin-top: 60px; margin-bottom: 50px;">Post
+                                        Assignment</button>
+                                </div>
+                                <div class="col-12 col-lg-4"></div>
+                            </div>
+            
+                        
+                    </div>
+
+                    <!--View Posted Assignments-->
+
+                    <div class="container-fluid mt-3 pb-3 card tab-pane fade" id="view-posted" role="tabpanel"
+                     style="padding-bottom:20px; "
+                        aria-labelledby="view-posted-tab">
+                            <div class="row mt-5">
+                                <div class="col-12 col-md-6 offset-md-3 text-center pt-3 mt-3">
+                                    <h3>Posted Assignments</h3>
+                                </div>              
+                            </div>
+                            <div class="table-responsive pb-3" >
+                                <table class="table table-hover" style="margin-top: 30px; box-shadow: 5px 10px #888888;text-align: center;">
+                                    <thead style="background-color: #00564d; color:white">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Course Id</th>
+                                            <th scope="col">Course Name</th>
+                                            <th scope="col">Posted on</th>
+                                            <th scope="col">Deadline</th>
+                                            <th scope="col">Link</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="posted-assignments-details">
+                
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+            
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="./js/components/commonUtility.js"></script>
+
+    <script src="./js/pages/teacher/postAssignmentPage.js" type="module"></script>
+    <script src="./js/pages/teacher/postAssignmentPageUtility.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/pages/common/dashboard.js"></script>
+
+    <!--Sweet alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</body>
+
+</html>

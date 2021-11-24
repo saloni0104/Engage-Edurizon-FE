@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>
+        Edurizon | Classroom
+    </title>
+
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link href="./css/dashboard.css" rel="stylesheet" />
+    <link href="./css/class.css" rel="stylesheet" />
+    <link href="./css/notes.css" rel="stylesheet" />
+
+</head>
+
+<body class="" style="background-color: #EBECF1;">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue"></div>
+
+        <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <div id="top-navbar"></div>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-lg">
+                <canvas id="bigDashboardChart"></canvas>
+            </div>
+
+            <div id="note-taking"></div>
+
+            <div class="content">
+                <div class="container-fluid card" id="course-detail-card">
+                    <div class="row mt-5 ">
+                        <div class="col-12 col-md-5 offset-md-1">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-class-members-tab" data-toggle="pill"
+                                        href="#pills-class-members" role="tab" aria-controls="pills-class-members"
+                                        aria-selected="true">Class Members</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-faculty-tab" data-toggle="pill" href="#pills-faculty"
+                                        role="tab" aria-controls="pills-faculty" aria-selected="false">Class Faculty</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-meetings-tab" data-toggle="pill" href="#pills-meetings"
+                                        role="tab" aria-controls="pills-meetings" aria-selected="false">Meetings</a>
+                                </li>
+                            </ul>
+    
+    
+                            <div class="tab-content mb-5" id="pills-tabContent">
+                                <!--students list-->
+                                <div class="tab-pane fade show active" id="pills-class-members" role="tabpanel"
+                                    aria-labelledby="pills-class-members-tab">
+                                    
+                                        <div class="table-responsive">
+                                        <table class="table">
+                                            <thead style="background-color: #00564d; color:white">
+                                                <tr>
+                                                    <th scope="col">Sr. No.</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Institute ID</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody id="student-details">
+    
+                                            </tbody>
+                                        </table>
+                                        </div>
+                                    
+                                </div>
+    
+                                <!--Faculty name-->
+                                <div class="tab-pane fade" id="pills-faculty" role="tabpanel"
+                                    aria-labelledby="pills-faculty-tab">
+                                    <div class="table-responsive">
+                                    <table class="table">
+                                        <thead style="background-color: #00564d; color:white">
+                                            <tr>
+                                                <th scope="col">Sr. No.</th>
+                                                <th scope="col">Institute ID</th>
+                                                <th scope="col">Faculty Name</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td id="teacher-id"></td>
+                                                <td id="teacher-name"></td>
+                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+    
+                                <!--Meetings-->
+                                <div class="tab-pane fade mt-5 " id="pills-meetings" role="tabpanel"
+                                    aria-labelledby="pills-meetings-tab">
+                                    <div class="card" height="300px">
+                                        <div class="meeting p-5 text-center" style="font-weight:bolder; background-color: #00564d; border-radius: 10px">
+                                            <a style="text-decoration:none; color:white; font-size:20px" id="join-meeting-link">Join meeting here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Announcements -->
+                        <div class="col-12 col-md-3 offset-md-1 pb-5">
+                            <div class="" id="announcement-card" style=" border: solid 3px teal; border-radius: 10px; box-shadow:5px 10px lightgrey;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Latest Announcements</h5>
+    
+    
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-message" role="tabpanel"
+                                            aria-labelledby="pills-message-tab">
+                                            <p class="card-text" id="view-message" style="font-size:18px; font-weight:bolder; color:#66b2b2"></p>
+                                            <p class="card-text" style="color:#00564d;"
+                                                id="view-message-date"></p>
+                                            <hr>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-schedule" role="tabpanel"
+                                            aria-labelledby="pills-schedule-tab">
+                                            <p class="card-text" id="view-schedule" style="font-size:18px; font-weight:bolder; color:#66b2b2"></p>
+                                            <p class="card-text" style="color:#00564d; "
+                                                id="view-schedule-date"></p>
+                                            <hr>
+                                        </div>
+                                    </div>
+    
+    
+                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="pills-message-tab" data-toggle="pill"
+                                                href="#pills-message" role="tab" aria-controls="pills-message">Class
+                                                Message</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-schedule-tab" data-toggle="pill"
+                                                href="#pills-schedule" role="tab" aria-controls="pills-schedule">Class
+                                                Schedule</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            
+            
+
+        </div>
+    </div>
+    <script src="./js/components/commonUtility.js"></script>
+
+    <script src="./js/pages/common/courseDetailsPage.js" type="module"></script>
+    <script src="./js/pages/common/courseDetailsPageUtility.js" type="module"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.3/perfect-scrollbar.min.js"
+        integrity="sha512-X41/A5OSxoi5uqtS6Krhqz8QyyD8E/ZbN7B4IaBSgqPLRbWVuXJXr9UwOujstj71SoVxh5vxgy7kmtd17xrJRw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="./js/pages/common/dashboard.js"></script>
+
+</body>
+
+</html>

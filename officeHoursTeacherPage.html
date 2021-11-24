@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>
+        Edurizon | Office Hours
+    </title>
+
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="./css/dashboard.css" rel="stylesheet" />
+    <link href="./css/notes.css" rel="stylesheet" />
+    <link href="./css/officeHour.css" rel="stylesheet">
+
+</head>
+
+<body style="background-color: #EBECF1;">
+
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue"></div>
+        <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <div class="top-navbar"></div>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-lg">
+                <canvas id="bigDashboardChart"></canvas>
+            </div>
+
+            <div id="note-taking"></div>
+
+            <div class="container-fluid mt-3">
+                
+                
+                <!-- Modal -->
+                <div class="modal fade" id="officeHourModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Your Office Hours</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <!-- Choose course dropdown -->
+                                <div class="dropdown">
+                                    <select class="category-btn" style="cursor: pointer" id="coursesList">
+                                        <option value="none" selected disabled hidden>
+                                            Choose Course*
+                                        </option>
+                                        <!-- insert dropdown options dynamically -->
+                                    </select>
+                                </div>
+                                <!-- days of the week dropdown -->
+                                <div class="dropdown" style="padding-top: 21px;">
+                                    <select class="category-btn" style="cursor: pointer" id="weekList">
+                                        <option value="none" selected disabled hidden>
+                                            Weekday*
+                                        </option>
+                                        <option>Monday</option>
+                                        <option>Tuesday</option>
+                                        <option>Wednesday</option>
+                                        <option>Thursday</option>
+                                        <option>Friday</option>
+
+                                    </select>
+                                </div>
+                                <!-- Start time -->
+                                <div style="padding-top: 21px;">
+                                    <label for="start-time" id="start-time-label">Choose start time* </label><br>
+                                    <input id="start-time" class="modal-time" type="time" name="start-time" style="cursor: pointer"
+                                        value="14:00">
+                                </div>
+                                <!-- End time -->
+                                <div style="padding-top: 21px;">
+                                    <label for="end-time" id="end-time-label">Choose end time* </label><br>
+                                    <input id="end-time" class="modal-time" type="time" name="end-time" style="cursor: pointer" value="18:00">
+                                </div>
+                                <div style="padding-top: 31px;">
+                                    <button type="button" class="btn" style="cursor: pointer" id="office-hour-submit-btn">Post Office Hour</button>
+                                </div>
+                            </div>
+ 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="row" id="course-card">
+
+                </div>
+            </div>
+
+            <!-- <div class="row mt-5">
+                <div class="col-12 col-md-6 offset-md-3 pt-3 text-center">
+                    <p style="font-size: 18px;">Please post your office hours by clicking on the button below!</p>
+                </div>              
+            </div> -->
+
+            <div class="row mt-3">
+                <div class="col-12 col-lg-4"></div>
+                <div class="col-12 col-lg-4 text-center">
+                    <button type="button" style="max-width: 60%;" class="post-office-hour-btn mb-5" data-toggle="modal"
+                        data-target="#officeHourModal">
+                        Post Office Hours
+                    </button>
+                </div>
+                <div class="col-12 col-lg-4"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="./js/components/commonUtility.js"></script>
+
+    <script src="./js/pages/teacher/officeHoursTeacherPage.js" type="module"></script>
+    <script src="./js/pages/teacher/officeHoursTeacherPageUtility.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+    <script src="./js/pages/common/dashboard.js"></script>
+
+    <!--Sweet alert-->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</body>
+
+</html>

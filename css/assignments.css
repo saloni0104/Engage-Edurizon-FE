@@ -1,0 +1,152 @@
+
+
+.btn-color {
+    border-radius: 50px;
+    color: #FFFFFF !important;
+    background-image: linear-gradient(to right, #000000, #00897b);
+    padding: 10px;
+    cursor: pointer;
+    border: none !important;
+    margin-top: 40px
+}
+
+.btn-color:hover {
+    color: #fff;
+    background-image: linear-gradient(to right, #00897b, #000000)
+}
+
+.btn-white {
+    border-radius: 50px;
+    color: #00564d;
+    background-color: #fff;
+    padding: 8px 40px;
+    cursor: pointer;
+    border: 2px solid #00564d !important
+}
+
+.btn-color-disabled{
+    border-radius: 50px;
+    color: #FFFFFF !important;
+    background-color: #66b2b2;
+    padding: 10px;
+    cursor: pointer;
+    border: none !important;
+    margin-top: 40px
+}
+
+.btn-white:hover {
+    color: #fff;
+    background-image: linear-gradient(to right, #00897b, #000000)
+}
+
+/* file choose button css */
+#teacher-assign-post-btn {
+    padding: 5px;
+    width: 30%;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #000000, #00897b);
+    color: white;
+    height: 40px;
+    margin-top: 10px;
+    box-shadow: none;
+    border:#00564d
+}
+
+#ques-file-upload-btn {
+  padding: 5px;
+  width: 30%;
+  border-radius: 10px;
+  background-color: #66b2b2;
+  color: white;
+  height: 40px;
+  margin-top: 10px;
+  box-shadow: none;
+  border:#00564d;
+  font-size:15px
+}
+
+#assign-upload-btn {
+    padding: 5px;
+    width: 50%;
+    border-radius: 10px;
+    color: white;
+    height: 40px;
+    margin-top: 10px;
+    box-shadow: none;
+    border:#00564d;
+    cursor: pointer;
+    background-color: #66b2b2;
+}
+
+
+/* submit button css */
+#submit-btn {
+    padding: 5px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #000000, #00897b);
+    color: white;
+    margin-top: 10px;
+    width: 50%;
+    box-shadow: none;
+  }
+  
+  #submit-btn:hover {
+    background-image: linear-gradient(to right, #00897b, #000000);
+    box-shadow: none;
+  }
+
+  /* Teacher post assignment */
+  textarea {
+    border: 2px solid #00564d;
+    resize: none;
+    border-radius: 10px;
+    outline: none;
+    width: 100%; 
+    min-height: 50px;
+  }
+
+  #teach-post-assign-button {
+    background-image: linear-gradient(to right, #000000, #00897b);
+    color: white;
+    box-shadow: none;
+    border:#00564d;
+    width: 20%;
+  }
+
+  #teach-post-assign-button:hover {
+    background-image: linear-gradient(to right, #00897b, #000000);
+    box-shadow: none;
+  }
+
+  
+.nav-pills .nav-item{
+  background-color: #66b2b2;
+  border-radius: 10px;
+  margin-left:10px;
+  font-size: 16px;
+  margin-bottom:10px;
+}
+
+.nav-pills .nav-item .active{
+  background-color: #00564d;
+  border-radius: 10px;
+  
+}
+
+.nav-pills a:hover{
+  color:white !important;
+}
+
+
+.nav-link{
+  color:white;
+}
+
+
+
+
+@media (max-width: 1000px) {
+#ques-file-upload-btn {
+  width: 60%;
+}
+}

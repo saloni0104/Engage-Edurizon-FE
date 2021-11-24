@@ -1,0 +1,116 @@
+.nav-pills .nav-item{
+    background-color: #66b2b2;
+    border-radius: 10px;
+    margin-left:10px;
+    margin-bottom:10px;
+  }
+  
+  .nav-pills .nav-item .active{
+    background-color: #00564d;
+    border-radius: 10px;
+  }
+  
+  
+  .nav-pills a:hover{
+    color:white !important;
+  }
+
+  .nav-link{
+    color:white;
+  }
+
+  #course-detail-card{
+    height:400px;
+  }
+ 
+
+  table {
+    margin-top:30px;
+    border-collapse:separate;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    border-left: solid #00564d 2px;
+    border-right: solid #00564d 2px;
+    border-bottom: solid #00564d 2px;
+    font-size:15px;
+    
+}
+ 
+.btn-color {
+    border-radius: 50px;
+    color: #fff;
+    background-image: linear-gradient(to right, #000000, #00897b);
+    padding: 15px;
+    cursor: pointer;
+    border: none !important;
+    margin-top: 40px
+}
+
+.btn-color:hover {
+    color: #fff;
+    background-image: linear-gradient(to right, #00897b, #000000)
+}
+
+.btn-white {
+    border-radius: 50px;
+    color: #00564d;
+    background-color: #fff;
+    padding: 8px 40px;
+    cursor: pointer;
+    border: 2px solid #00564d !important
+}
+
+.btn-white:hover {
+    color: #fff;
+    background-image: linear-gradient(to right, #00897b, #000000)
+}
+
+#announcement-card{
+  width: 25rem;
+}
+
+@media (max-width: 600px) {
+  #announcement-card{
+    width: 18rem;
+  }
+
+  .navbar-brand{
+    font-size: 15px !important;
+    font-weight:bolder;
+    
+  }
+
+  #course-detail-card{
+    height:800px;
+  }
+
+}
+
+
+#post-ann {
+  padding: 5px;
+  width: 50% !important;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #000000, #00897b);
+  color: white;
+  margin-top: 10px;
+  box-shadow: none;
+}
+
+#post-ann:hover {
+  background-image: linear-gradient(to right, #00897b, #000000);
+  box-shadow: none;
+}
+
+textarea {
+  border: 2px solid #00564d;
+  resize: none;
+  border-radius: 10px;
+  outline: none;
+}
+ 
+
+ 
+
+
+  

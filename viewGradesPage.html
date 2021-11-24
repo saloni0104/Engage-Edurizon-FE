@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"    
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>
+        Edurizon | View Grades
+    </title>
+
+    <!-- Fonts and icons -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"  
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="./css/dashboard.css" rel="stylesheet" />
+    <link href="./css/gradeAssignmentsPage.css" rel="stylesheet" />
+    <link href="./css/notes.css" rel="stylesheet" />
+</head>
+
+<body style="background-color:#E9EAEF">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue"></div>
+        <div class="main-panel" id="main-panel">
+            <div class="top-navbar"></div>
+            <div class="panel-header panel-header-lg">
+                  <canvas id="bigDashboardChart"></canvas>
+            </div>
+
+            <div id="note-taking"></div>
+
+            <div class="content">
+                <div class="container-fluid col-12 col-md-10 offset-md-1 card">
+                    <div class="row mt-5 mb-2">
+                        <div class="col-12 col-md-6 offset-md-3 text-center">
+                            <h3>List of My Courses</h3>
+                        </div>              
+                    </div>
+                    <div class="table-responsive col-md-10 offset-md-1 pb-2">
+                    <table class=" table table-hover text-center" style="box-shadow: 5px 10px #888888">
+                        <thead id="table-header-display" style="background-color: #00564d; color:white">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Course Id</th>
+                                <th scope="col">Course Name</th>
+                                <th scope="col">Marks</th>
+                                <th scope="col">My submission</th>
+                            </tr>
+                        </thead>
+                        <tbody id="grade-details">
+        
+                        </tbody>
+                    </table>     
+                    </div>  
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <script src="./js/components/commonUtility.js"></script>
+    <script src="js/pages/student/viewGradesPage.js" type="module"></script>
+    <script src="js/pages/student/viewGradesPageUtility.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"      
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"      
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"      
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"  
+        crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"    
+        crossorigin="anonymous"></script>
+
+    <script src="./js/pages/common/dashboard.js"></script>
+</body>
+
+</html>

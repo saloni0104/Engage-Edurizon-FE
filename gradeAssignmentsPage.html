@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"    
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>
+        Edurizon | Grade Assignments
+    </title>
+
+    <!-- Fonts and icons -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"  
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="./css/dashboard.css" rel="stylesheet" />
+    <link href="./css/gradeAssignmentsPage.css" rel="stylesheet" />
+    <link href="./css/notes.css" rel="stylesheet" />
+</head>
+
+<body style="background-color:#E9EAEF">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue"></div>
+        <div class="main-panel" id="main-panel">
+            <div class="top-navbar"></div>
+            <div class="panel-header panel-header-lg">
+                 <canvas id="bigDashboardChart"></canvas>
+            </div>
+
+            <div id="note-taking"></div>
+
+            <div class="content">
+
+
+
+                <!--  table of all students with -> display marks and option to update marks for a particular course (taken from dropdown) -->
+                <!-- dynamically fetch student id, name and add a column for pencil to update marks -->
+                 
+                <div class="container col-12 col-md-10 offset-md-1 card" style="box-shadow: 5px 10px #888888">
+                    <div class="row mt-5">
+                        <!-- <div class="col-12 col-md-6 offset-md-3 text-center pt-2 mt-2">
+                            <h3>Choose Course</h3>
+                        </div>   -->
+                        <div class="col-lg-4 col-12"></div>
+                        <div class="col-lg-4 col-12">
+                            <!-- Choose course dropdown -->
+                            <div class="dropdown">
+                                <select class="category-btn" id="coursesList" style="cursor: pointer"
+                                    onchange="onChangeHandler(event)">
+                                    <option value="none" selected disabled hidden>
+                                        Choose Course
+                                    </option>
+                                    <!-- insert dropdown options dynamically -->
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4 col-12"></div>
+                    </div>
+
+                    <div class="row mt-5 mb-1">
+                        <div class="col-12 col-md-6 offset-md-3 text-center">
+                            <h3>List of Students</h3>
+                        </div>              
+                    </div>
+                    <div class="col-md-10 offset-md-1 table-responsive pb-3">
+                        <table class="table table-hover text-center" id="table" style="visibility: hidden;">
+                            <thead id="table-header-display" style="background-color: #00564d; color:white">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Student Id</th>
+                                    <th scope="col">Student Name</th>
+                                    <th scope="col">Marks</th>
+                                    <th scope="col">Add/Update Marks</th>
+                                </tr>
+                            </thead>
+                            <tbody id="student-details">
+                                <div id="before-studentlist" style="text-align:center; font-size: 20px;">No course
+                                    selected to
+                                    display student details.</div>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal -->
+            <div id="modal-holder"></div>
+                   
+        </div>
+    </div>
+    <script src="./js/components/commonUtility.js"></script>
+
+    <script src="js/pages/teacher/gradeAssignmentsPage.js" type="module"></script>
+    <script src="js/pages/teacher/gradeAssignmentsPageUtility.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"      
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"      
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"      
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"  
+        crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"    
+        crossorigin="anonymous"></script>
+
+    <script src="./js/pages/common/dashboard.js"></script>
+
+    <!--Sweet alert-->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "Edurizon",
+  "version": "1.0.0",
+  "description": "A road to get into Microsoft",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel *.html --https --port=5500 --no-cache",
+    "build": "parcel build *html"
+  },
+  "type": "module",
+  "author": "Respected and Honourable Saloni Parekh",
+  "license": "ISC",
+  "repository": "https://github.com/TheCodeClutch/Dolby-FE.git",
+  "includePaths": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "jwt-token": "^1.0.9",
+    "moment": "^2.29.1",
+    "parcel": "^2.0.1"
+  }
+}

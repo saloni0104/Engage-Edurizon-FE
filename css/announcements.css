@@ -1,0 +1,68 @@
+.btn-color {
+    border-radius: 50px;
+    color: #fff;
+    background-image: linear-gradient(to right, #000000, #00897b);
+    padding: 15px;
+    cursor: pointer;
+    border: none !important;
+    margin-top: 40px
+}
+
+.btn-color:hover {
+    color: #fff;
+    background-image: linear-gradient(to right, #00897b, #000000)
+}
+
+.btn-white {
+    border-radius: 50px;
+    color: #00564d;
+    background-color: #fff;
+    padding: 8px 40px;
+    cursor: pointer;
+    border: 2px solid #00564d !important
+}
+
+.btn-white:hover {
+    color: #fff;
+    background-image: linear-gradient(to right, #00897b, #000000)
+}
+
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+
+.nav-pills .nav-item{
+    background-color: #66b2b2;
+    border-radius: 10px;
+    margin-left:10px;
+    font-size: 16px;
+    margin-bottom:10px;
+  }
+  
+  .nav-pills .nav-item .active{
+    background-color: #00564d;
+    border-radius: 10px;
+    
+  }
+
+  .nav-pills a:hover{
+    color:white !important;
+  }
+
+  
+
+  .nav-link{
+    color:white;
+  }
+
+  .form-group{
+      font-size:18px;
+      
+  }
+
+

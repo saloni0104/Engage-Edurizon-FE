@@ -1,0 +1,150 @@
+/* Student Office Hours */
+
+#teachers-bay {
+  background-color: #D0F0C0 ;
+  height: 650px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  border-radius:15px;
+  box-sizing: content-box;
+  border: 3px solid #D0F0C0;
+  box-shadow: 5px 10px #888888
+}
+
+#character {
+  position: absolute;
+  top: 140px;
+  left: 140px;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+}
+
+.card{
+  padding:10px;
+  box-shadow: 5px 10px #888888;
+}
+
+
+.card .teacher{
+  padding:10px;
+  box-shadow: 5px 10px #888888;
+}
+
+.classes {
+  z-index: 1;
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  margin: 20px;
+  display: inline-block;
+  position: absolute;
+
+}
+
+.classes:nth-child(3) {
+  top: 0;
+  left: 0;
+}
+
+.classes:nth-child(4) {
+  top: 0;
+  left: 50%;
+  transform: translate(-70%, 0);
+}
+
+.classes:nth-child(5) {
+  top: 0;
+  right: 0;
+}
+
+.classes:nth-child(6) {
+  top: 50%;
+  left: 0;
+}
+
+.classes:nth-child(7) {
+  top: 50%;
+  right: 0;
+}
+
+.floor {
+  border: 1px solid black;
+  height: 50px;
+}
+
+#box {
+  position: absolute;
+  top: 180px;
+  left: 160px;
+  width: 60px;
+  height:60px;
+  z-index: 2;
+  
+}
+
+#fun-space {
+  z-index: 1;
+  height: 150px;
+  width: 350px;
+  background-color: white;
+  margin: 20px;
+  display: inline-block;
+  position: absolute;
+
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-55%, 0);
+  border-radius:10px;
+  box-shadow: 5px 10px #888888;
+}
+
+/* Teacher Office Hours */
+
+.post-office-hour-btn,
+#office-hour-submit-btn {
+  padding: 5px;
+  width: 60%;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #000000, #00897b);
+  color: white;
+  height: 45px;
+  margin-top: 10px;
+  box-shadow: none;
+  border: 2px solid #00564d;
+  font-size: 16px;
+}
+
+.post-office-hour-btn:hover,
+#office-hour-submit-btn:hover {
+  background-image: linear-gradient(to right, #00897b, #000000);
+}
+
+.category-btn {
+  padding: 5px;
+  border-radius: 10px;
+  width: 60%;
+  height: 50px;
+  color: black;
+  border: 2px solid #00665c;
+  box-shadow: none;
+  background-color: white;
+}
+
+.category-btn:focus {
+  box-shadow: none;
+  border: 2px solid #00564d;
+}
+
+.modal-time {
+  width: 60%;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  height: 45px;
+  margin-top: 5px;
+  box-shadow: none;
+  border: 2px solid #00665c;
+  font-size: 16px;
+}

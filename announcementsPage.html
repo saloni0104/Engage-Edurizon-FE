@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script> -->
+
+    <title>
+        Edurizon | Post Announcements
+    </title>
+
+    <!-- Favicon -->
+    <!-- <link rel="apple-touch-icon" sizes="57x57" href="Images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="Images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="Images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff"> -->
+
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="./css/dashboard.css" rel="stylesheet" />
+    <link href="./css/announcements.css" rel="stylesheet" />
+    <link href="./css/notes.css" rel="stylesheet" />
+
+</head>
+
+<body style="background-color: #EBECF1;">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue"></div>
+        <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <div class="top-navbar"></div>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-lg">
+                <canvas id="bigDashboardChart"></canvas>
+            </div>
+
+            <div id="note-taking"></div>
+
+            <div class="content">
+                <div class="card col-12 col-md-8 offset-md-2" style="box-shadow: 5px 10px #888888">
+                    <ul class="nav nav-pills mb-3 mt-5" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="post-message-tab" data-toggle="pill" href="#post-message"
+                                role="tab" aria-controls="post-message" aria-selected="true">Post Message</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="post-schedule-tab" data-toggle="pill" href="#post-schedule"
+                                role="tab" aria-controls="post-schedule" aria-selected="false">Post Schedule</a>
+                        </li>
+
+                    </ul>
+
+
+                    <div class="tab-content" id="pills-tabContent">
+                        <!--Post Message-->
+
+                        <div class="container pb-4 tab-pane fade show active" id="post-message" role="tabpanel"
+                            aria-labelledby="post-message-tab" >
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="offset-md-2 col-md-8 col-10 my-3">
+                                        <div class="form-group"> <label class="form-control-label text-muted">Course
+                                                ID</label>
+                                            <input type="text" id="mess_course_id" name="mess_course_id"
+                                                placeholder="Course ID" class="form-control">
+                                        </div>
+
+                                        <div class="form-group"> <label class="form-control-label text-muted">Post
+                                                Message</label>
+                                            <div class="input-group">
+                                                <textarea class="form-control" id="message" name="message" style="resize: none;
+                                                    height: 100px; width: 350px;"
+                                                    placeholder="Post Class Message"></textarea>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-md-5 offset-md-3 my-2 px-2 pb-3">
+                                        <button class="btn-block btn-color" id="post-mess-btn">Post
+                                            Announcement</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Post Schedule-->
+
+                        <div class="container pb-4 tab-pane fade" id="post-schedule" role="tabpanel"
+                            aria-labelledby="post-schedule-tab">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="offset-md-2 col-md-8 col-10 my-3">
+                                        <div class="form-group"> <label class="form-control-label text-muted">Course
+                                                ID</label>
+                                            <input type="text" id="sched_course_id" name="ann_course_id"
+                                                placeholder="Course ID" class="form-control">
+                                        </div>
+
+                                        <div class="form-group"> <label class="form-control-label text-muted">Post
+                                                Schedule</label>
+                                            <div class="input-group">
+                                                <textarea class="form-control" id="schedule" style="resize: none;
+                                                    height: 100px; width: 350px;"
+                                                    placeholder="Post Class Schedule"></textarea>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-md-5 offset-md-3 my-2 px-2 pb-3">
+                                        <button class="btn-block btn-color" id="post-sched-btn">Post
+                                            Announcement</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <script src="./js/components/commonUtility.js"></script>
+
+    <script src="./js/pages/teacher/announcementsPage.js" type="module"></script>
+    <script src="./js/pages/teacher/announcementsPageUtility.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/pages/common/dashboard.js"></script>
+
+    <!--Sweet alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</body>
+
+</html>
