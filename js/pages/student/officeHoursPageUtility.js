@@ -1,13 +1,16 @@
+// Function to make tiled layout
+
 const makeFloor = () => {
   for (let i = 0; i < 156; i++) {
     const div = document.createElement("div");
     div.classList.add("col-1");
     div.classList.add("floor");
     document.getElementById("teachers-bay").appendChild(div);
-    div.setAttribute("style", "border: 1px solid #00564d")  
-      // box-shadow:5px 5px #A3C1AD; 
+    div.setAttribute("style", "border: 1px solid #00564d");
   }
 };
+
+//Function to make dynamic Course Cabins
 const makeClasses = ({
   courseTitle = "",
   officeHourStartTime = "",
@@ -16,44 +19,47 @@ const makeClasses = ({
   officeHourMeetingLink = "",
   courseId = "",
 }) => {
-  // check for the red and blue btn logic for the classes depeding upon office hour timing in the argument
-  console.log({
-    courseTitle,
-    officeHourStartTime,
-    officeHourEndTime,
-    officeHourDay,
-    officeHourMeetingLink,
-    courseId,
-  });
   const div = document.createElement("div");
   div.classList.add("classes");
   div.classList.add("card");
-  
+
   var text_div = document.createElement("div");
   const text = document.createTextNode(`${courseId} ${courseTitle}`);
   text_div.appendChild(text);
-  text_div.setAttribute("style", "font-size:13px; text-align:center; font-weight:bolder; margin-top:5px");
+  text_div.setAttribute(
+    "style",
+    "font-size:13px; text-align:center; font-weight:bolder; margin-top:5px"
+  );
   div.appendChild(text_div);
 
   var time_div = document.createElement("div");
-  const time = document.createTextNode(`Office Hours : ${officeHourStartTime} - ${officeHourEndTime} on ${officeHourDay}`);
-  time_div.setAttribute("style", "font-size:13px; text-align:center;font-weight:bolder; margin-top:5px;");
+  const time = document.createTextNode(
+    `Office Hours : ${officeHourStartTime} - ${officeHourEndTime} on ${officeHourDay}`
+  );
+  time_div.setAttribute(
+    "style",
+    "font-size:13px; text-align:center;font-weight:bolder; margin-top:5px;"
+  );
   time_div.appendChild(time);
   div.appendChild(time_div);
 
-  
-
+  //Red and Green Dots to Show Status Availibilty
   const red_dot = document.createElement("i");
   red_dot.classList.add("fas");
   red_dot.classList.add("fa-circle");
-  red_dot.setAttribute("style", "color: red; size:12px; position: absolute; bottom: 5px; left: 5px; margin-top:8px");
+  red_dot.setAttribute(
+    "style",
+    "color: red; size:12px; position: absolute; bottom: 5px; left: 5px; margin-top:8px"
+  );
   const green_dot = document.createElement("i");
   green_dot.classList.add("fas");
   green_dot.classList.add("fa-circle");
-  green_dot.setAttribute("style", "color: green; size:12px; position: absolute; bottom: 5px; left: 5px; margin-top:8px");
-  
-  
+  green_dot.setAttribute(
+    "style",
+    "color: green; size:12px; position: absolute; bottom: 5px; left: 5px; margin-top:8px"
+  );
 
+  //Sets Availibilty as per Office Hours Posted By Teachers
   div.setAttribute("data-meetingid", officeHourMeetingLink);
   div.setAttribute("data-courseid", courseId);
   div.setAttribute("data-coursetitle", courseTitle);
@@ -91,9 +97,10 @@ const makeClasses = ({
       div.appendChild(red_dot);
     }
   }, 1000);
-  // return `<div data-meetingId=${officeHourMeetingLink} class="classes"></div>`
+
 };
 
+//Get all allocated courses list, to generate cabins
 let token = localStorage.getItem("token");
 fetch("https://edurizon.herokuapp.com/courses/getAllotedCourses", {
   method: "GET",
@@ -107,7 +114,6 @@ fetch("https://edurizon.herokuapp.com/courses/getAllotedCourses", {
   })
   .then(({ courseMessages }) => {
     if (courseMessages) {
-      console.log(courseMessages);
       courseMessages.forEach((course) => {
         course.value?.COURSE_NAME &&
           makeClasses({
@@ -121,14 +127,17 @@ fetch("https://edurizon.herokuapp.com/courses/getAllotedCourses", {
       });
     }
     makeFloor();
+    document
+      .getElementById("box")
+      .firstChild.setAttribute(
+        "src",
+        `https://ui-avatars.com/api/?name=${localStorage.getItem("name")}`
+      );
   })
   .catch((err) => {
-    console.log(err);
   });
 
-// movement of character wala code
-
-// Box mover code
+// Character movement
 var pane = $("#teachers-bay"),
   box = $("#box"),
   w = pane.width() - box.width(),
@@ -140,6 +149,7 @@ function newv(v, a, b) {
   return n < 0 ? 0 : n > w ? w : n;
 }
 
+//Key Functions for arrow key movement to check position of character 
 $(window).keydown(function (e) {
   d[e.which] = true;
 });
@@ -148,7 +158,6 @@ $(window).keyup(function (e) {
   const characterPositionCheck = checkIfInside();
   if (characterPositionCheck[0]) {
     const element = characterPositionCheck[1];
-    console.log("I am inside", characterPositionCheck[1]);
     Swal.fire({
       title: "Are you sure?",
       text: `You are going to join office hours of ${element.getAttribute(
@@ -161,20 +170,81 @@ $(window).keyup(function (e) {
       confirmButtonText: "Join now",
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = `https://localhost:5500/meetingPage.html?meetingId=${element.getAttribute(
+        window.location.href = `https://edurizon.netlify.app/meetingPage.html?meetingId=${element.getAttribute(
           "data-meetingid"
         )}&courseId=${element.getAttribute(
           "data-courseid"
         )}&courseName=${element.getAttribute("data-coursetitle")}`;
       }
     });
-
-    // alert('I am in');
   } else {
-    console.log("I am not inside any class");
-    // alert('I am not in');
   }
-  // if this returns true, check if existing session is going on with the same element
+});
+
+window.addEventListener(
+  "resize",
+  function (event) {
+    if (window.innerWidth <= 990) {
+      document.getElementById("button-navigation").style.display = "block";
+    } else {
+      document.getElementById("button-navigation").style.display = "none";
+    }
+  },
+  true
+);
+
+//Button movement functions on phone screens
+
+$(document).ready(function () {
+  $("#up").click(function () {
+    e = $.Event("keydown");
+    e.which = 38;
+    $("#box").trigger(e);
+    setTimeout(() => {
+      e = $.Event("keyup");
+      e.which = 38;
+      $("#box").trigger(e);
+    }, 200);
+  });
+});
+
+$(document).ready(function () {
+  $("#down").click(function (e) {
+    e = $.Event("keydown");
+    e.which = 40;
+    $("#box").trigger(e);
+    setTimeout(() => {
+      e = $.Event("keyup");
+      e.which = 40;
+      $("#box").trigger(e);
+    }, 200);
+  });
+});
+
+$(document).ready(function () {
+  $("#left").click(function (e) {
+    e = $.Event("keydown");
+    e.which = 37;
+    $("#box").trigger(e);
+    setTimeout(() => {
+      e = $.Event("keyup");
+      e.which = 37;
+      $("#box").trigger(e);
+    }, 200);
+  });
+});
+
+$(document).ready(function () {
+  $("#right").click(function (e) {
+    e = $.Event("keydown");
+    e.which = 39;
+    $("#box").trigger(e);
+    setTimeout(() => {
+      e = $.Event("keyup");
+      e.which = 39;
+      $("#box").trigger(e);
+    }, 200);
+  });
 });
 
 setInterval(function () {
@@ -188,7 +258,7 @@ setInterval(function () {
   });
 }, 20);
 
-// Code to check the position of the box, if its in or not
+// Code to check the position of the character, if its inside cabin or not
 const getCoordinates = () => {
   const mover = document.querySelector("#box");
   const rect = mover.getBoundingClientRect();
@@ -223,7 +293,6 @@ const getCoordinatesOfClasses = () => {
 const checkIfInside = () => {
   const character = getCoordinates();
   const classes = getCoordinatesOfClasses();
-  console.log(classes);
   let isInside = false;
   let parentClassElement = null;
   classes.forEach(function (element) {
@@ -234,8 +303,6 @@ const checkIfInside = () => {
       character.right < element.right
     ) {
       isInside = true;
-      console.log("I am inside", { element });
-      console.log("I am inside", { elementPoster: element.element });
       parentClassElement = element.element;
     }
   });

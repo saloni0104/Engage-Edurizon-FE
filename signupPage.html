@@ -4,37 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/login.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script> -->
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="Images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="Images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/login.css">
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Title -->
     <title>Edurizon | Signup</title>
+
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" id="preloader"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
     <div class="container px-1 pt-5 mx-auto mt-5 pb-4">
-
         <div class="d-flex flex-lg-row flex-column-reverse">
-
             <div class="offset-md-3 card card1">
                 <div class="row justify-content-center my-auto">
                     <div class="col-md-8 col-10 my-1">
+                        
+                        <!-- Logo -->
                         <div class="row justify-content-center px-3 mb-1"> <img id="logo2"
                                 src="./Images/signup-logo.png"> </div>
                         <h3 class="mb-5 text-center heading">User Signup</h3>
                         <h6 class="msg-info">Please signup to generate your password</h6>
+
+                        <!-- Institute ID -->
                         <div class="form-group"> <label class="form-control-label text-muted">Institute ID</label>
                             <input type="text" id="instid" name="instid" placeholder="Institute ID"
                                 class="form-control">
                         </div>
 
+                        <!-- Choose Teacher or Student -->
                         <div class="row" style="padding-left: 15px;">
-                            <div class="col-12 mt-3 mb-3" >Login as:</div>
+                            <div class="form-control-label text-muted" style="padding-bottom: 10px;">Signup as:</div>
                             <div class="col-12 col-md-10 offset-md-1">
                                 <label class="radio-type">Teacher
-                                    <input class="radio-btn" type="radio" id="teacher-radio" checked="checked" name="radio">
+                                    <input class="radio-btn" type="radio" id="teacher-radio" checked="checked"
+                                        name="radio">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
@@ -46,15 +83,16 @@
                             </div>
                         </div>
 
+                        <!-- Signup Button -->
                         <div class="row">
                             <div class="col-12 col-md-10 offset-md-1" style="width: 100%;">
-                                <input class="btn-block btn-color" type="button" value="Signup"
-                                    id="signup-button">
+                                <input class="btn-block btn-color" type="button" value="Signup" id="signup-button">
                             </div>
                         </div>
-
                     </div>
                 </div>
+
+                <!-- Login -->
                 <div class="bottom text-center">
                     <p class="sm-text mx-auto mb-3">Already have an account?<a href="loginPage.html"><button
                                 class="btn btn-white ml-2">Login</button></a></p>
@@ -63,7 +101,7 @@
         </div>
     </div>
 
-    <script src="./js/components/commonUtility.js"></script>
+    <!-- Scripts -->
     <script src="./js/pages/common/signupPage.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -75,11 +113,8 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-
-
-
     <!--Sweet alert-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

@@ -7,39 +7,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>
-        Edurizon | Office Hours
-    </title>
 
-    <!--     Fonts and icons     -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="Images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="Images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--  Fonts and icons  -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+    <!-- CSS -->
     <link href="./css/dashboard.css" rel="stylesheet" />
     <link href="./css/notes.css" rel="stylesheet" />
     <link href="./css/officeHour.css" rel="stylesheet">
+
+    <!-- Title -->
+    <title>
+        Edurizon | Office Hours
+    </title>
 
 </head>
 
 <body style="background-color: #EBECF1;">
 
+    <!-- Preloader -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" id="preloader"></div>
+        </div>
+    </div>
+
     <div class="wrapper ">
+        <!-- Sidebar -->
         <div class="sidebar" data-color="blue"></div>
         <div class="main-panel" id="main-panel">
             <!-- Navbar -->
             <div class="top-navbar"></div>
-            <!-- End Navbar -->
+
             <div class="panel-header panel-header-lg">
                 <canvas id="bigDashboardChart"></canvas>
+
             </div>
 
+            <!-- Information Box -->
+            <div class="text-center">
+                <i class="fas fa-info-circle mt-3" style="font-size:40px; color:light-blue" data-toggle="collapse"
+                    href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"></i>
+            </div>
+            <div class="collapse text-center" id="collapseExample">
+                <div class="card col-12 col-md-4 card-body p-3 text-justify">
+                    <ul>
+                        <li>
+                            Post your free office hours for each course, inorder to view the cabins and get access to
+                            links.
+                        </li>
+                        <li>
+                            Light will turn from red to green during active office hours.
+                        </li>
+                        <li>
+                            "Enter Meet" is only enabled during the green light
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Notes -->
             <div id="note-taking"></div>
 
+            <!-- Main Content -->
             <div class="container-fluid mt-3">
-                
-                
-                <!-- Modal -->
+
+                <!-- Modal to Post Office Hours-->
                 <div class="modal fade" id="officeHourModal" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -57,7 +110,6 @@
                                         <option value="none" selected disabled hidden>
                                             Choose Course*
                                         </option>
-                                        <!-- insert dropdown options dynamically -->
                                     </select>
                                 </div>
                                 <!-- days of the week dropdown -->
@@ -71,57 +123,52 @@
                                         <option>Wednesday</option>
                                         <option>Thursday</option>
                                         <option>Friday</option>
-
                                     </select>
                                 </div>
                                 <!-- Start time -->
                                 <div style="padding-top: 21px;">
                                     <label for="start-time" id="start-time-label">Choose start time* </label><br>
-                                    <input id="start-time" class="modal-time" type="time" name="start-time" style="cursor: pointer"
-                                        value="14:00">
+                                    <input id="start-time" class="modal-time" type="time" name="start-time"
+                                        style="cursor: pointer" value="14:00">
                                 </div>
                                 <!-- End time -->
                                 <div style="padding-top: 21px;">
                                     <label for="end-time" id="end-time-label">Choose end time* </label><br>
-                                    <input id="end-time" class="modal-time" type="time" name="end-time" style="cursor: pointer" value="18:00">
+                                    <input id="end-time" class="modal-time" type="time" name="end-time"
+                                        style="cursor: pointer" value="18:00">
                                 </div>
+                                <!-- Post Office Hour Button -->
                                 <div style="padding-top: 31px;">
-                                    <button type="button" class="btn" style="cursor: pointer" id="office-hour-submit-btn">Post Office Hour</button>
+                                    <button type="button" class="btn" style="cursor: pointer"
+                                        id="office-hour-submit-btn">Post Office Hour</button>
                                 </div>
                             </div>
- 
                         </div>
                     </div>
                 </div>
+
+                <!-- Post Office Hour Modal Opener -->
+                <div class="row mt-3">
+                    <div class="col-12 col-lg-4"></div>
+                    <div class="col-12 col-lg-4 text-center mb-5 mt-2">
+                        <button type="button" style="max-width: 60%;" class="post-office-hour-btn mb-5"
+                            data-toggle="modal" data-target="#officeHourModal">
+                            Post Office Hours
+                        </button>
+                    </div>
+                    <div class="col-12 col-lg-4"></div>
+                </div>
             </div>
 
+            <!-- Course Cabins as per office hours entered -->
             <div class="content">
                 <div class="row" id="course-card">
-
                 </div>
             </div>
-
-            <!-- <div class="row mt-5">
-                <div class="col-12 col-md-6 offset-md-3 pt-3 text-center">
-                    <p style="font-size: 18px;">Please post your office hours by clicking on the button below!</p>
-                </div>              
-            </div> -->
-
-            <div class="row mt-3">
-                <div class="col-12 col-lg-4"></div>
-                <div class="col-12 col-lg-4 text-center">
-                    <button type="button" style="max-width: 60%;" class="post-office-hour-btn mb-5" data-toggle="modal"
-                        data-target="#officeHourModal">
-                        Post Office Hours
-                    </button>
-                </div>
-                <div class="col-12 col-lg-4"></div>
-            </div>
-
-
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="./js/components/commonUtility.js"></script>
 
     <script src="./js/pages/teacher/officeHoursTeacherPage.js" type="module"></script>
@@ -137,12 +184,11 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-
     <script src="./js/pages/common/dashboard.js"></script>
 
     <!--Sweet alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 
 </html>

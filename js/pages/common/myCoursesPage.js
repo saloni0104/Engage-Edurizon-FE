@@ -11,6 +11,8 @@ window.onload = () => {
   const { name } = JSON.parse(
     Buffer.from(token?.split(".")[1], "base64")?.toString()
   );
+
+  //Sidebar change as per teacher or student
   const identifier = localStorage.getItem("identifier");
   if (identifier?.toLowerCase().charAt(0) === "t") {
     document.getElementsByClassName("sidebar")[0].innerHTML = Navbar({
@@ -23,10 +25,12 @@ window.onload = () => {
     });
   }
 
+  //TopNavbar
   document.getElementById("top-navbar").innerHTML = TopNavbar({
     title: "My Courses",
     name,
   });
 
+  //Notes
   document.getElementById("note-taking").innerHTML = noteContainer();
 };

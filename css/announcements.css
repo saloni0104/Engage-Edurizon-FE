@@ -1,5 +1,5 @@
 .btn-color {
-    border-radius: 50px;
+    border-radius: 10px;
     color: #fff;
     background-image: linear-gradient(to right, #000000, #00897b);
     padding: 15px;
@@ -27,14 +27,12 @@
     background-image: linear-gradient(to right, #00897b, #000000)
 }
 
-
 button:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     outline-width: 0
 }
-
 
 .nav-pills .nav-item{
     background-color: #66b2b2;
@@ -53,9 +51,7 @@ button:focus {
   .nav-pills a:hover{
     color:white !important;
   }
-
   
-
   .nav-link{
     color:white;
   }

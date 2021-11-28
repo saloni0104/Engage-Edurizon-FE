@@ -24,7 +24,7 @@
 }
 .home-banner-left h1 {
   color: #222;
-  font-size: 55px;
+  font-size: 60px;
   line-height: 1em;
   margin-bottom: 20px;
 }
@@ -68,10 +68,20 @@
   }
 }
 
+a:hover{
+  text-decoration: none !important;
+}
+
 .banner-area {
   /* background: url(../img/banner-bg.png) no-repeat center; */
   background-position: right;
   min-height: 510px;
+}
+
+@media(min-width: 900px){
+  #signup{
+    margin-top:97px;
+  }
 }
 
 .banner-right {
@@ -103,6 +113,10 @@
   .banner-right .box {
     padding: 7px 15px;
     margin-top: 30px;
+  }
+
+  .btn-color {
+    margin-top: 10px;
   }
 }
 .banner-right .box i {
@@ -143,16 +157,7 @@
   background-image: linear-gradient(to right, #00897b, #000000);
 }
 
-.btn-white {
-  border-radius: 50px;
-  color: #00564d;
-  background-color: #fff;
-  padding: 8px 40px;
-  cursor: pointer;
-  border: 2px solid #00564d !important;
-}
 
-.btn-white:hover {
-  color: #fff;
-  background-image: linear-gradient(to right, #00897b, #000000);
+body { 
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif !important;
 }

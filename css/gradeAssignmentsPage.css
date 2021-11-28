@@ -17,9 +17,11 @@
 .pencil-btn {
   color: #00564d;
   border: 2px solid #00665c;
+  background-color: white;
 }
 
 .pencil-btn:focus {
+  border: 2px solid #00665c;
   box-shadow: none;
   border: none;
 }

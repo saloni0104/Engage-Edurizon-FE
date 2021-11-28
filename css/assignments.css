@@ -56,7 +56,7 @@
   padding: 5px;
   width: 30%;
   border-radius: 10px;
-  background-color: #66b2b2;
+  background-color: #1b6e6e;
   color: white;
   height: 40px;
   margin-top: 10px;
@@ -75,7 +75,7 @@
     box-shadow: none;
     border:#00564d;
     cursor: pointer;
-    background-color: #66b2b2;
+    background-color: #1B6E6E;
 }
 
 
@@ -137,13 +137,9 @@
   color:white !important;
 }
 
-
 .nav-link{
   color:white;
 }
-
-
-
 
 @media (max-width: 1000px) {
 #ques-file-upload-btn {

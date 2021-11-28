@@ -6,60 +6,46 @@ import {
   addScreenShareNode,
   removeScreenShareNode,
   removeVideoNode,
+  addParticipantCard,
+  removeParticipantCard,
 } from "./ui.js";
 
-const main = () => {
+
+//Initialising Stream Connection
+const main = async () => {
   const token = window.localStorage.getItem("token");
   const { studentId, teacherId, name } = JSON.parse(
     Buffer.from(token?.split(".")[1], "base64")?.toString()
   );
-  fetch("https://edurizon.herokuapp.com/calls/getCredentials", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: token,
-    },
-  })
-    .then((res) => res.json())
-    .then(async (data) => {
-      console.log({ data });
-      VoxeetSDK.initialize(data.consumerKey, data.consumerSecret);
-      try {
-        await VoxeetSDK.session.open({
-          name,
-          ...(studentId && { studentId }),
-          ...(teacherId && { teacherId }),
-        });
-        initUI({ name, studentId, teacherId });
-      } catch (e) {
-        console.log({ e });
-        if (e.Name === "SessionError") {
-          initUI({ name, studentId, teacherId });
-        } else {
-          console.log("Some error at our end:", { e });
-        }
-      }
-    })
-    .catch((err) => {
-      console.log(err);
+  VoxeetSDK.initialize(process.env.CONSUMER_KEY, process.env.CONSUMER_SECRET);
+  try {
+    await VoxeetSDK.session.open({
+      name,
+      ...(studentId && { studentId }),
+      ...(teacherId && { teacherId }),
     });
+    initUI({ name, studentId, teacherId });
+  } catch (e) {
+    if (e.Name === "SessionError") {
+      initUI({ name, studentId, teacherId });
+    } else {
+      console.log("Some error at our end:", { e });
+    }
+  }
 
   // streamadded event is transmitted ot all the participants, when someone joins with audio and video enabled
   VoxeetSDK.conference.on("streamAdded", (participant, stream) => {
-    console.log("streamAdded", { participant, stream });
     if (stream.type === "ScreenShare") return addScreenShareNode(stream);
 
     if (stream.getVideoTracks().length) {
       addVideoNode(participant, stream);
-      addParticipantNode(participant);
-    } else {
-      addVideoNode(participant, false);
-      addParticipantNode(participant);
     }
+    addParticipantNode(participant);
+    addParticipantCard(participant);
   });
 
+  //Updates Stream
   VoxeetSDK.conference.on("streamUpdated", (participant, stream) => {
-    console.log("streamUpdated", { participant, stream });
     if (stream.type === "ScreenShare") return;
 
     if (stream.getVideoTracks().length) {
@@ -69,11 +55,12 @@ const main = () => {
     }
   });
 
+  //Removes Stream
   VoxeetSDK.conference.on("streamRemoved", (participant, stream) => {
-    console.log("streamRemoved", { participant, stream });
     if (stream.type === "ScreenShare") return removeScreenShareNode();
     removeVideoNode(participant);
     removeParticipantNode(participant);
+    removeParticipantCard(participant);
   });
 };
 

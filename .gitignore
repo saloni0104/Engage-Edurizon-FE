@@ -24,3 +24,4 @@ parcel-bundle-reports/
 .verdaccio_storage/
 sourcemap-info.json
 .history
+.env

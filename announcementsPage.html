@@ -7,16 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script> -->
-
-    <title>
-        Edurizon | Post Announcements
-    </title>
 
     <!-- Favicon -->
-    <!-- <link rel="apple-touch-icon" sizes="57x57" href="Images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="Images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="Images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="Images/favicon/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="Images/favicon/apple-icon-76x76.png">
@@ -25,39 +18,56 @@
     <link rel="apple-touch-icon" sizes="144x144" href="Images/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="Images/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="Images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Images/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="Images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon/favicon-16x16.png">
     <link rel="manifest" href="Images/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff"> -->
+    <meta name="theme-color" content="#ffffff">
 
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+    <!-- CSS-->
     <link href="./css/dashboard.css" rel="stylesheet" />
     <link href="./css/announcements.css" rel="stylesheet" />
     <link href="./css/notes.css" rel="stylesheet" />
 
+    <!-- Title -->
+    <title>
+        Edurizon | Post Announcements
+    </title>
+
 </head>
 
 <body style="background-color: #EBECF1;">
+
+    <!-- Preloader -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" id="preloader">
+            </div>
+        </div>
+    </div>
+
     <div class="wrapper ">
+        <!-- Sidebar -->
         <div class="sidebar" data-color="blue"></div>
         <div class="main-panel" id="main-panel">
             <!-- Navbar -->
             <div class="top-navbar"></div>
-            <!-- End Navbar -->
+
             <div class="panel-header panel-header-lg">
                 <canvas id="bigDashboardChart"></canvas>
             </div>
 
+            <!-- Notes -->
             <div id="note-taking"></div>
 
+            <!-- Main Content -->
             <div class="content">
                 <div class="card col-12 col-md-8 offset-md-2" style="box-shadow: 5px 10px #888888">
                     <ul class="nav nav-pills mb-3 mt-5" id="pills-tab" role="tablist">
@@ -69,7 +79,6 @@
                             <a class="nav-link" id="post-schedule-tab" data-toggle="pill" href="#post-schedule"
                                 role="tab" aria-controls="post-schedule" aria-selected="false">Post Schedule</a>
                         </li>
-
                     </ul>
 
 
@@ -77,32 +86,32 @@
                         <!--Post Message-->
 
                         <div class="container pb-4 tab-pane fade show active" id="post-message" role="tabpanel"
-                            aria-labelledby="post-message-tab" >
+                            aria-labelledby="post-message-tab">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="offset-md-2 col-md-8 col-10 my-3">
+                                        <!-- Course ID -->
                                         <div class="form-group"> <label class="form-control-label text-muted">Course
                                                 ID</label>
                                             <input type="text" id="mess_course_id" name="mess_course_id"
+                                                style="border:2px solid #00564d; border-radius: 10px;"
                                                 placeholder="Course ID" class="form-control">
                                         </div>
-
+                                        <!-- Post Message Textarea -->
                                         <div class="form-group"> <label class="form-control-label text-muted">Post
                                                 Message</label>
                                             <div class="input-group">
                                                 <textarea class="form-control" id="message" name="message" style="resize: none;
-                                                    height: 100px; width: 350px;"
+                                                    height: 100px; border:2px solid #00564d; border-radius: 10px;"
                                                     placeholder="Post Class Message"></textarea>
                                             </div>
                                         </div>
-
                                     </div>
-                                    <div class="col-12 col-md-5 offset-md-3 my-2 px-2 pb-3">
+                                    <!-- Post Button -->
+                                    <div class="col-12 col-md-4 offset-md-4 my-2 px-2 pb-3">
                                         <button class="btn-block btn-color" id="post-mess-btn">Post
                                             Announcement</button>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -114,46 +123,42 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="offset-md-2 col-md-8 col-10 my-3">
+                                        <!-- Course ID -->
                                         <div class="form-group"> <label class="form-control-label text-muted">Course
                                                 ID</label>
                                             <input type="text" id="sched_course_id" name="ann_course_id"
+                                                style="border:2px solid #00564d; border-radius: 10px;"
                                                 placeholder="Course ID" class="form-control">
                                         </div>
-
+                                        <!-- Post Schedule Textarea -->
                                         <div class="form-group"> <label class="form-control-label text-muted">Post
                                                 Schedule</label>
                                             <div class="input-group">
                                                 <textarea class="form-control" id="schedule" style="resize: none;
-                                                    height: 100px; width: 350px;"
+                                                    height: 100px; border:2px solid #00564d; border-radius: 10px;"
                                                     placeholder="Post Class Schedule"></textarea>
                                             </div>
                                         </div>
-
                                     </div>
-                                    <div class="col-12 col-md-5 offset-md-3 my-2 px-2 pb-3">
+                                    <!-- Post Button -->
+                                    <div class="col-12 col-md-4 offset-md-4 my-2 px-2 pb-3">
                                         <button class="btn-block btn-color" id="post-sched-btn">Post
                                             Announcement</button>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
 
 
-
                     </div>
                 </div>
             </div>
-
-
-
-
         </div>
     </div>
 
-    <script src="./js/components/commonUtility.js"></script>
+    <!-- Scripts -->
 
+    <script src="./js/components/commonUtility.js"></script>
     <script src="./js/pages/teacher/announcementsPage.js" type="module"></script>
     <script src="./js/pages/teacher/announcementsPageUtility.js"></script>
 
@@ -168,9 +173,8 @@
         crossorigin="anonymous"></script>
 
     <script src="./js/pages/common/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!--Sweet alert-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 
 </html>

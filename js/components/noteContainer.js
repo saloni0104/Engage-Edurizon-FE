@@ -3,7 +3,7 @@ export const noteContainer = () => {
     <button class="open-button" id="open-notes" onclick="openForm()">My Notes</button>
     <div class="note-popup" id="myForm">
         <form class="note-container">
-            <div id="notes" tabindex=0 contenteditable="true" onfocusout="noteFocusHandler()">
+            <div id="notes" tabindex=0 style="overflow: auto" contenteditable="true" onfocusout="noteFocusHandler()">
                 
             </div>
             <fieldset>

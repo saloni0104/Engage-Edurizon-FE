@@ -1,8 +1,10 @@
 function redirectToCourseDetailsPage(event) {
   const courseId = event.currentTarget.getAttribute("data-courseId");
-  window.location.href = `https://localhost:5500/courseDetailsPage.html?courseId=${courseId}`;
-  // window.location.href = `https://edurizon.netlify.app/courseDetailsPage.html?courseId=${courseId}`;
+  window.location.href = `https://edurizon.netlify.app/courseDetailsPage.html?courseId=${courseId}`;
 }
+
+//Get Allocated Courses and redirect to Course Details Page on click
+
 
 let token = localStorage.getItem("token");
 fetch("https://edurizon.herokuapp.com/courses/getAllotedCourses", {
@@ -17,7 +19,6 @@ fetch("https://edurizon.herokuapp.com/courses/getAllotedCourses", {
   })
   .then((response) => {
     if (response) {
-      console.log(response);
       let output = "";
       let order = 0;
       response.courses.forEach((card) => {
@@ -26,8 +27,8 @@ fetch("https://edurizon.herokuapp.com/courses/getAllotedCourses", {
         order = order + 1;
         output =
           output +
-          `<div class="col-12 col-md-4" style="cursor: pointer">
-              <div class="card" data-courseId=${course_id} onclick=redirectToCourseDetailsPage(event) style="height: 270px; box-shadow: 5px 10px #888888">
+          `<div class="col-12 col-md-4">
+              <div class="card" data-courseId=${course_id} onclick=redirectToCourseDetailsPage(event) style="height: 270px; cursor: pointer">
                   <div class="card-header">
                       <h5 class="card-category">${course_id}</h5>
                       <h4 class="card-title">${course_name}</h4>  
@@ -40,5 +41,4 @@ fetch("https://edurizon.herokuapp.com/courses/getAllotedCourses", {
     }
   })
   .catch((err) => {
-    console.log(err);
   });

@@ -1,11 +1,15 @@
+// Logout Function
 const logout = () => {
   localStorage.removeItem("token");
-  console.log("logout");
-  window.location.href = "https://localhost:5500";
+  localStorage.removeItem("name");
+  localStorage.removeItem("identifier");
+  window.location.href = "https://edurizon.netlify.app";
 };
 
+//Auto saving notes function
 const noteSaveHandler = () => {
   var notes = document.getElementById("notes")?.innerHTML;
+  const token = localStorage.getItem("token");
   let status = [];
 
   if (notes?.length <= 1) {
@@ -15,11 +19,8 @@ const noteSaveHandler = () => {
   }
 
   if (status.includes("false")) {
-    console.log("There was some error while validating");
     return false;
   } else {
-    console.log("Validated");
-
     fetch("https://edurizon.herokuapp.com/notes/saveNotes", {
       method: "POST",
       headers: new Headers({
@@ -34,10 +35,8 @@ const noteSaveHandler = () => {
         return response.json();
       })
       .then((response) => {
-        console.log(response);
       })
       .catch((err) => {
-        console.log(err);
       });
   }
 };
@@ -57,13 +56,11 @@ function openForm() {
       return response.json();
     })
     .then((response) => {
-      console.log(response);
       if (response.message) {
         document.getElementById("notes").innerHTML = response.notes;
       }
     })
     .catch((err) => {
-      console.log(err);
     });
 }
 
@@ -71,6 +68,7 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
+//checked if logged in function
 const checkIfLoggedIn = () => {
   if (localStorage.getItem("token")) {
     return true;
@@ -79,7 +77,7 @@ const checkIfLoggedIn = () => {
   }
 };
 
-!checkIfLoggedIn() && (window.location.href = "https://localhost:5500");
+!checkIfLoggedIn() && (window.location.href = "https://edurizon.netlify.app");
 
 const noteFocusHandler = () => {
   noteSaveHandler();

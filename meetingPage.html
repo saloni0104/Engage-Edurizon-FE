@@ -1,62 +1,75 @@
 <html lang="en">
 
 <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="Images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="Images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link href="./css/meeting.css" rel="stylesheet" />
+
+    <!-- Scripts and StyleSheets -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-    <title>Edurizon | Meeting</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-
-    <link href="./css/meeting.css" rel="stylesheet" />
     <script src="https://unpkg.com/@voxeet/voxeet-web-sdk@3.2.1/dist/voxeet-sdk.js" type="text/javascript"></script>
     <script type="module" src="./js/ui.js"></script>
 
+    <!-- Title -->
+    <title>Edurizon | Meeting</title>
 </head>
 
-<body style="background-image: linear-gradient(to right, #000000, #00897b );">
+<body style="background-color: #008679">
 
+    <!-- Sidebar to show Participants List -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-1 offset-md-11 mt-3">
                 <button class="openbtn" onclick="openNav()"><i class="fas fa-users"></i></button>
             </div>
         </div>
-
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-            <a href="#" style="color:#969696">Faculty</a>
-
+            <a href="#" style="color:#969696">Participants</a>
             <hr style="color:white">
-
-            <ul style="list-style-type: none;">
-                <li>Manali Parekh</li>
-            </ul>
-
-            <a href="#" style="color:#969696">Students</a>
-            <hr style="color:white">
-
             <ul style="list-style-type: none;" id="participants-list">
             </ul>
-
-
-
-
         </div>
     </div>
 
-
+    <!-- Main Container -->
     <div class="container">
         <h1 id="name-message" style="color: white">Logging in...</h1>
+        <!-- Video Container -->
         <div class="row">
             <div class="col-12 mt-5">
-                <div class="card" id="video-container" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-                    <!-- <div class="card-body" 
-                        style=" background-color: white;"></div> -->
+                <div class="card" id="video-container"
+                    style="display: flex; flex-direction: row; flex-wrap: wrap; background-color:#00564d">
                 </div>
             </div>
         </div>
+        <!-- Screenshare Container -->
         <div class="row">
             <div class="col-12 mt-5">
                 <div id="screenshare-container"></div>
@@ -65,57 +78,56 @@
 
 
         <div class="row">
-
             <div class="col-12 col-md-6 offset-md-3 mt-5">
-
+                <!-- Meeting Controls -->
                 <div style="position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); z-index: 100"
-                    class="card" style="border-radius:40px; " id="button-card">
+                    class="card" style="border-radius:40px;" id="button-card">
                     <div class="row" id="button-row">
-                        <div class="col-3 col-md-2 mt-1" id="buttons">
-                            <button id="audioBtn" class="btn btn-block btn-lg" style="background-color:grey">
-                                <i id="mic-icon" class="fas fa-microphone"></i>
-                            </button>
 
+                        <!-- Microphone -->
+                        <div class="col-3 col-md-2 mt-1" id="buttons">
+                            <button id="audioBtn" class="btn btn-block btn-lg" style="background-color:white">
+                                <i id="mic-icon" style="color:#00564d"></i>
+                            </button>
                         </div>
 
+                        <!-- Camera -->
                         <div class="col-3 col-md-2 mt-1" id="buttons">
-
-                            <button id="video-btn" class="btn btn-block btn-lg" style="background-color:grey">
-                                <i id="video-icon" class="fas fa-video"></i>
+                            <button id="video-btn" class="btn btn-block btn-lg" style="background-color:white">
+                                <i id="video-icon" style="color:#00564d"></i>
                             </button>
-
                         </div>
 
-
+                        <!-- Screenshare -->
                         <div class="col-3 col-md-2 mt-1" id="buttons">
-                            <button id="screenshare-btn" class="btn btn-block btn-lg" style="background-color:grey">
+                            <button id="screenshare-btn" class="btn btn-block btn-lg" style="background-color:#00564d">
                                 <i id="screen-share-icon" class="fas fa-share-square"></i>
                             </button>
-
                         </div>
 
+                        <!-- Leave Meeting -->
                         <div class="col-3 col-md-2 mt-1" id="buttons">
                             <button id="leave-btn" disabled type="button" class="btn btn-block btn-danger btn-lg">
                                 <i id="exit-icon" class="fas fa-phone-slash"></i>
                             </button>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+    <!-- Scripts -->
     <script src="./js/components/commonUtility.js"></script>
+
+    <!-- Opening and Closing Participant List -->
     <script>
         function openNav() {
             document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
         }
-
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
         }
     </script>
 
@@ -132,6 +144,5 @@
         crossorigin="anonymous"></script>
 
 </body>
-
 
 </html>

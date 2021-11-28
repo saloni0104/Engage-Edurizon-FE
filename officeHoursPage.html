@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>
@@ -15,18 +15,41 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src= "https://code.jquery.com/jquery-1.12.4.min.js">
+	</script>
+   
     <link href="./css/dashboard.css" rel="stylesheet" />
     <link href="./css/notes.css" rel="stylesheet" />
     <link href="./css/officeHour.css" rel="stylesheet" />
-
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="Images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="Images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
 
 </head>
 
 <body style="background-color: #EBECF1;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" id="preloader">
+
+            </div>
+        </div>
+    </div>
 
     <div class="wrapper ">
         <div class="sidebar" data-color="blue"></div>
@@ -39,29 +62,74 @@
             </div>
 
             <div id="note-taking"></div>
+            
 
             <div class="content">
+                <div class="text-center">
+                    <i class="fas fa-info-circle mt-4 pt-1" style="font-size:40px; color:light-blue"
+                    data-toggle="collapse" href="#collapseExample" role="button"
+                     aria-expanded="false" aria-controls="collapseExample"></i>
+                </div>
+                <div class="collapse text-center" id="collapseExample">
+                    <div class="card col-12 col-md-4 card-body p-3 text-justify">
+                        <ul>
+                            <li>
+                                The cards denote the course-wise faculy cabins and their office hours are displayed. 
+                            </li>
+                            <li>
+                                Light will turn from <b>red</b> to <b>green</b> during active office hours.
+                            </li>
+                            <li>
+                                Use <b>Arrow keys</b> to move the character(yourself) to these cabins and a popup will appear enabling you to join the call.
+                            </li>
+                            <li>
+                                Student Breakout Room is a space for the students to have some fun time and chill during their free hours. Teachers do not have access to this breakout room.
+                            </li>
+                        </ul>
+                      
+                    </div>
+                  </div>
+
                 <div id="teachers-bay" class="row">
                     <div id="box"><img class="align-self-center text-center outside img-fluid"
-                        style="border-radius: 50px; border: solid 5px teal" src="https://ui-avatars.com/api/?name=Saloni Parekh" width="100"
-                        height="200"></div>
+                            style="border-radius: 50px; border: solid 5px teal"
+                            src="https://ui-avatars.com/api/?name=?" width="100" height="200"></div>
                     <div data-courseid='' data-meetingid="11243101-83b2-4b84-abbb-58735552217e"
-                        data-coursetitle="Fun Space" id="fun-space" class="classes"><h5 class="mt-5 ml-3 "style="font-weight:bolder;">Student's Breakout Room</h5></div>
+                        data-coursetitle="Fun Space" id="fun-space" class="classes">
+                        <h5 class="mt-5 ml-3 " style="font-weight:bolder;">Student's Breakout Room</h5>
+                    </div>
+                </div>
+                <div class="container-fluid" id="button-navigation" style="display:none">
+                    <div class="row text-center">
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="button caret" id="up"><i class="fas fa-caret-up" style="font-size:25px"></i></button>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="button caret" id="down"><i class="fas fa-caret-down" style="font-size:25px"></i></button>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="button caret" id="left"><i class="fas fa-caret-left" style="font-size:25px"></i></button>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="button caret" id="right"><i class="fas fa-caret-right" style="font-size:25px"></i></button>
+                        </div>
+                    </div>
+                        
                 </div>
             </div>
 
         </div>
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="./js/components/commonUtility.js"></script>
 
     <script src="./js/pages/student/officeHoursPage.js" type="module"></script>
     <script src="./js/pages/student/officeHoursPageUtility.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>

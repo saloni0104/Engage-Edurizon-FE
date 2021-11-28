@@ -81,6 +81,8 @@
   width: 60px;
   height:60px;
   z-index: 2;
+  touch-action: pan-x;
+  touch-action: pan-y;
   
 }
 
@@ -148,3 +150,21 @@
   border: 2px solid #00665c;
   font-size: 16px;
 }
+
+.caret{
+  border-radius: 50px;
+  color: #FFFFFF !important;
+  background-image: linear-gradient(to right, #000000, #00897b);
+  padding: 5px;
+  cursor: pointer;
+  border: none !important;
+  margin-top: 40px;
+  width:100px;
+  }
+
+
+@media (max-width: 750px) {
+  #button-navigation{
+    display:block
+  }
+  }

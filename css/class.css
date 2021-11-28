@@ -109,8 +109,55 @@ textarea {
   outline: none;
 }
  
+.student-remove-btn {
+    color: #00564d;
+    border: 2px solid #00665c;
+    background-color: white;
+}
 
- 
+.student-remove-btn:focus {
+    box-shadow: none;
+    border: 2px solid #00665c;
+}
+  
+#add-student-to-course {
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid #00564d;
+    background-image: linear-gradient(to right, #000000, #00897b);
+    color: white;
+    height: 40px;
+    box-shadow: none;
+    font-size:16px
+}
 
+.add-student-modal {
+    width: 60%;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    height: 45px;
+    margin-top: 5px;
+    box-shadow: none;
+    border: 2px solid #00665c;
+    font-size: 14px;
+}
+
+#add-student-submit-btn {
+    padding: 5px;
+    width: 30%;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #000000, #00897b);
+    color: white;
+    height: 45px;
+    margin-top: 10px;
+    box-shadow: none;
+    border: 2px solid #00564d;
+    font-size: 16px;
+}
+
+#add-student-submit-btn {
+    background-image: linear-gradient(to right, #00897b, #000000);
+}
 
   

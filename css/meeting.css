@@ -1,5 +1,5 @@
 body {
-  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif !important;
 }
 
 .sidebar {
@@ -66,7 +66,7 @@ body {
 
 .video-boxes {
   flex: none;
-  width: 33%;
+  width: 100%;
   padding: 5px;
   height: 200px;
   border-radius: 10px;
@@ -83,8 +83,13 @@ video {
   width: 100%;
 }
 
+
 #button-card {
-  height: 50px;
+  height: 60px;
+  background-color:black;
+  padding-top:5px;
+  border-radius:15px;
+  width:35%
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -102,10 +107,6 @@ video {
     font-size: 18px;
   }
 
-  #buttons {
-    margin-left: 50px;
-    margin-right: 5px;
-  }
 
   #button-row {
     margin-top: 10px;
@@ -125,4 +126,30 @@ li {
   color: white;
   font-size: 18px;
   margin: 10px;
+}
+
+.participant-card {
+  padding: 5px;
+  width: 33%;
+  padding: 5px;
+  height: 200px;
+  border-radius: 10px;
+  flex-grow: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  border: 5px solid #00564d;
+}
+
+.participantCard-circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center;
+  background-size: contain;
+  margin: auto auto;
+ 
 }

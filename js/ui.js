@@ -1,5 +1,4 @@
-// ui.js
-export const initUI = ({ name, studentId, teacherId }) => {
+export const initUI = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const meetingId = urlParams.get("meetingId");
   const courseName = urlParams.get("courseName");
@@ -8,126 +7,137 @@ export const initUI = ({ name, studentId, teacherId }) => {
   nameMessage.innerHTML = `You have now joined ${courseId}: ${courseName}`;
   const leaveButton = document.getElementById("leave-btn");
 
-  // video call
+  // video
   const videoBtn = document.getElementById("video-btn");
+  const camBtn = document.getElementById("video-icon");
 
+  //audio
   const audioBtn = document.getElementById("audioBtn");
+  const mikeBtn = document.getElementById("mic-icon");
 
   // screen sharing
   const screenShareBtn = document.getElementById("screenshare-btn");
+  const shareIcon = document.getElementById("screen-share-icon");
 
+  //enter conference
   VoxeetSDK.conference
     .create({ alias: meetingId })
     .then((conference) => VoxeetSDK.conference.join(conference, {}))
     .then(() => {
       leaveButton.disabled = false;
-      videoBtn.style.backgroundColor = "grey";
-      audioBtn.style.backgroundColor = "grey";
-      screenShareBtn.style.backgroundColor = "grey";
+      camBtn.setAttribute("class", "fas fa-video-slash");
+      mikeBtn.setAttribute("class", "fas fa-microphone-slash");
+      screenShareBtn.style.backgroundColor = "white";
+      shareIcon.style.color = "teal";
+      addParticipantNode(VoxeetSDK.session.participant);
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+    })
 
+  //leave conference
   leaveButton.onclick = () => {
     VoxeetSDK.conference
       .leave()
       .then(() => {
         leaveButton.disabled = true;
-        screenShareBtn.style.backgroundColor = "grey";
-        audioBtn.style.backgroundColor = "grey";
-        videoBtn.style.backgroundColor = "grey";
+        screenShareBtn.style.backgroundColor = "white";
+        shareIcon.style.color = "teal";
+        mikeBtn.setAttribute("class", "fas fa-microphone-slash");
+        camBtn.setAttribute("class", "fas fa-video-slash");
+        window.location.href = `https://edurizon.netlify.app/courseDetailsPage.html?courseId=${courseId}`;
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+      })
   };
 
   // video btn handlers
   videoBtn.onclick = () => {
     //turn cam on
-    if (videoBtn.style.backgroundColor === "grey") {
+    if (camBtn.getAttribute("class") === "fas fa-video-slash") {
       VoxeetSDK.conference
         .startVideo(VoxeetSDK.session.participant)
         .then(() => {
-          videoBtn.style.backgroundColor = "green";
+          camBtn.setAttribute("class", "fas fa-video");
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+        })
     }
     //Turn cam off
-    else if (videoBtn.style.backgroundColor === "green") {
+    else if (camBtn.getAttribute("class") === "fas fa-video") {
       VoxeetSDK.conference
         .stopVideo(VoxeetSDK.session.participant)
         .then(() => {
-          videoBtn.style.backgroundColor = "grey";
+          camBtn.setAttribute("class", "fas fa-video-slash");
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+        })
     }
   };
 
   // screen share btn handlers
   screenShareBtn.onclick = () => {
-    if (screenShareBtn.style.backgroundColor === "grey") {
+    //On
+    if (screenShareBtn.style.backgroundColor === "white") {
       VoxeetSDK.conference
         .startScreenShare()
         .then(() => {
-          screenShareBtn.style.backgroundColor = "blue";
+          screenShareBtn.style.backgroundColor = "teal";
+          shareIcon.style.color = "white";
+
         })
-        .catch((err) => console.error(err));
-    } else if (screenShareBtn.style.backgroundColor === "blue") {
+        .catch((err) => {
+        })
+    }
+    //Off
+    else if (screenShareBtn.style.backgroundColor === "teal") {
       VoxeetSDK.conference
         .stopScreenShare()
         .then(() => {
-          screenShareBtn.style.backgroundColor = "grey";
+          screenShareBtn.style.backgroundColor = "white";
+          shareIcon.style.color = "teal";
+
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+        })
+
     }
   };
 
   // mic btn handlers
   audioBtn.onclick = () => {
-    if (audioBtn.style.backgroundColor === "grey") {
-      navigator.mediaDevices
-        .getUserMedia({ audio: true })
-        .then(function (stream) {
-          console.log("You let me use your mic!");
-          audioBtn.style.backgroundColor = "orange";
-        })
-        .catch(function (err) {
-          console.log({ err });
-          console.log("No mic for you!");
-        });
-    } else if (audioBtn.style.backgroundColor === "orange") {
-      navigator.mediaDevices
-        .getUserMedia({ audio: true })
-        .then(() => {
-          console.log("Mic stopped!");
-          audioBtn.style.backgroundColor = "grey";
-        })
-        .catch(function (err) {
-          console.log({ err });
-          console.log("No mic for you!");
-        });
+
+    if (mikeBtn.getAttribute("class") === "fas fa-microphone-slash") {
+      VoxeetSDK.conference.mute(VoxeetSDK.session.participant, false);    //no mute
+      mikeBtn.setAttribute("class", "fas fa-microphone");
+    } else if (mikeBtn.getAttribute("class") === "fas fa-microphone") {
+      VoxeetSDK.conference.mute(VoxeetSDK.session.participant, true);    //mute
+      mikeBtn.setAttribute("class", "fas fa-microphone-slash");
     }
   };
 };
 
 // For creation of video node
 export const addVideoNode = (participant, stream) => {
-  let videoNode = document.getElementById("video-" + participant.id);
-  if (!videoNode) {
-    videoNode = document.createElement("video");
-    videoNode.setAttribute("id", "video-" + participant.id);
-    videoNode.setAttribute("playsinline", true);
-    videoNode.muted = true;
-    videoNode.setAttribute("autoplay", "autoplay");
-    videoNode.setAttribute("class", "video-boxes");
-    const videoContainer = document.getElementById("video-container");
-    if (!stream) {
-      videoNode.setAttribute(
-        "style",
-        "height: 200px; width: 33%; background:transparent url('https://i.pinimg.com/736x/8a/76/96/8a7696cb9ac02d0ea26945a8e563b04b--camera-icon-flat-icons.jpg') no-repeat 0 0;"
-      );
+  const targetParticipantCard = document.getElementById(
+    "participantCard-" + participant.id
+  );
+
+
+  if (targetParticipantCard) {
+    targetParticipantCard.removeChild(targetParticipantCard.firstChild);
+    let videoNode = document.getElementById("video-" + participant.id);
+    if (!videoNode) {
+      videoNode = document.createElement("video");
+      videoNode.setAttribute("id", "video-" + participant.id);
+      videoNode.setAttribute("playsinline", true);
+      videoNode.muted = true;
+      videoNode.setAttribute("autoplay", "autoplay");
+      videoNode.setAttribute("class", "video-boxes");
+      targetParticipantCard.style.backgroundColor = "white";
+      targetParticipantCard.appendChild(videoNode);
     }
-    videoContainer.appendChild(videoNode);
+    navigator.attachMediaStream(videoNode, stream);
   }
-  stream && navigator.attachMediaStream(videoNode, stream);
 };
 
 export const removeVideoNode = (participant) => {
@@ -136,21 +146,25 @@ export const removeVideoNode = (participant) => {
   if (videoNode) {
     videoNode.srcObject = null; // Prevent memory leak in Chrome
     videoNode.parentNode.removeChild(videoNode);
+    addParticipantCard(participant);
   }
 };
 
 export const addParticipantNode = (participant) => {
-  console.log({ participant });
+  if (document.getElementById("participant-" + participant.id)) {
+    return;
+  }
   const participantsList = document.getElementById("participants-list");
 
   // if the participant is the current session user, don’t add them to the list
-  if (participant.id === VoxeetSDK.session.participant.id) return;
+  // if (participant.id === VoxeetSDK.session.participant.id) return;
 
   let participantNode = document.createElement("li");
   participantNode.setAttribute("id", "participant-" + participant.id);
   participantNode.innerText = `${participant.info.name}`;
 
   participantsList.appendChild(participantNode);
+
 };
 
 export const removeParticipantNode = (participant) => {
@@ -185,5 +199,45 @@ export const removeScreenShareNode = () => {
   if (screenShareNode) {
     screenShareNode.srcObject = null; // Prevent memory leak in Chrome
     screenShareNode.parentNode.removeChild(screenShareNode);
+  }
+};
+
+//Add Participant Card
+export const addParticipantCard = (participant) => {
+  const targetParticipantCard = document.getElementById(
+    "participantCard-" + participant.id
+  );
+  if (!targetParticipantCard) {
+    const div = document.createElement("div");
+    div.setAttribute("class", "participant-card");
+    div.setAttribute("id", `participantCard-${participant.id}`);
+    const circleDiv = document.createElement("div");
+    circleDiv.setAttribute("class", "participantCard-circle");
+    circleDiv.setAttribute(
+      "style",
+      `background-image: url('https://ui-avatars.com/api/?name=${participant.info.name}&background=008679&color=fff')`
+    );
+    div.appendChild(circleDiv);
+    document.getElementById("video-container").appendChild(div);
+  } else {
+    const circleDiv = document.createElement("div");
+    circleDiv.setAttribute("class", "participantCard-circle");
+    circleDiv.setAttribute(
+      "style",
+      `background-image: url('https://ui-avatars.com/api/?name=${participant.info.name}&background=008679&color=fff')`
+    );
+    targetParticipantCard.style.backgroundColor = "black";
+    targetParticipantCard.appendChild(circleDiv);
+  }
+};
+
+//Remove Participant Card
+export const removeParticipantCard = (participant) => {
+  let participantCardNode = document.getElementById(
+    "participantCard" + participant.id
+  );
+
+  if (participantCardNode) {
+    participantCardNode.parentNode.removeChild(participantCardNode);
   }
 };
