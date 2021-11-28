@@ -1,10 +1,14 @@
-# Edurizon ~ Igniting a Better Future
+# Edurizon (A submission for Microsoft Engage'21)
 
 <p align="center">
 	<img src="https://github.com/saloni0104/Engage-Edurizon-FE/blob/master/Images/edurizon-logo-new.png" alt="Engage 21"/>
 </p>
 
-## A submission for Microsoft Engage'21
+<p align="center">
+	<a href="https://drive.google.com/file/d/1oLQzdgn6Y6eVVfM4cFM-9Rox-i4k1oAF/view?usp=sharing"><h2 aligh="center"><strong>Short 5 min Video Demo</strong></h2></a>
+</p>
+
+## Edurizon ~ Igniting a Better Future
 
 <p align="justify">Edurizon is a one-stop fully functional hosted web application for smooth and extensive collaboration and engagement between teachers and students in this virtual era of learning and education. This prototype is built using agile methodologies as a part of the Microsoft Engage Mentorship Program 2021. From seamless video conferencing for classes and submitting assignments to a discussion’s forum and an interactive office hours meet, this application has some of the most essential features required to make teaching and learning a fun process remotely!
 </p>
