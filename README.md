@@ -47,8 +47,7 @@ E. **Note Taking** <br>
 	a) Note taking comes in very handy, especially when you are in a teaching and learning environment. Therefore a note-taking feature has been added on every page of the 	website for quicker and easier access. <br>
 	b) Notes have the auto-saving ability along with normal text formatting options of bold, italic and underline. <br> 
 
-F. **Office Hours - USP Feature**
-
+F. **Office Hours - USP Feature** <br>
 In the virtual mode of education, it often becomes very difficult for the students to reach out to their teachers for doubts and difficulties, as per their convenient timings. This increases complexities and hampers their learning, even self-esteem of students in some cases.  Keeping this in mind, this feature has been built with the following functionality: <br>
 
 _a) For Students View -_ <br>
