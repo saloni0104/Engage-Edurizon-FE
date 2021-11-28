@@ -16,7 +16,7 @@
  * [UI](https://www.figma.com/file/k0gR5lXBm7D9L0JJEYSvkw/Microsoft-Engage'21---Edurizon?node-id=0%3A1)
  * [Backend Repo (used for CICD pipeline)](https://github.com/saloni0104/Engage-Edurizon-BE)
   
-![img](https://github.com/sharanya02/Teamix/blob/main/media/Teamix.png?raw=true)
+![img](https://github.com/saloni0104/Engage-Edurizon-FE/blob/master/Images/home.JPG)
 
 ## Features of the application
 
@@ -25,9 +25,9 @@ A. **Courses** <br>
 	b) _Course Details Page_ - <br>
 		(i) Displays list of students in the course <br>
 		(ii) Displays faculty details <br>
-		(iii)Displays virtual class meeting link <br>
-		(iv)Displays course-wise announcements i.e class schedule and class messages that are posted by the teacher. <br>
-		(v)Teachers have an additional functionality to add and remove students to a particular course <br>
+		(iii) Displays virtual class meeting link <br>
+		(iv) Displays course-wise announcements i.e class schedule and class messages that are posted by the teacher. <br>
+		(v) Teachers have an additional functionality to add and remove students to a particular course <br>
 		
 B. **Assignments** <br>
 	a) _Student’s Assignments Page_ - Shows list of pending and submitted assignments for the students with relevant details like Assignment Title, Question Link, Due Date, 		attaching and submitting file option. <br>
@@ -54,7 +54,7 @@ In the virtual mode of education, it often becomes very difficult for the studen
 _a) For Students View -_ <br>
 	(i) Course Faculty Cabins are displayed on the layout with course names and the free office hours of the teachers. <br>
 	(ii) The red light turns to green once the office hours become active. <br>
-	(iii)The student user(circular element with initials) can easily move to the desired cabin during the active hours with the help of **arrow keys** of the keyboard. <br>
+	(iii) The student user(circular element with initials) can easily move to the desired cabin during the active hours with the help of **arrow keys** of the keyboard. <br>
 	(iv) Once the student is inside the cabin, a popup appears, enabling them to join the meeting, where the teacher will be available. <br>
 	(v) The **Student Breakout Room** is a space where students can enjoy their break and chill with friends. Teachers do not have access to this breakout room. <br>
 
@@ -149,7 +149,8 @@ Last two days were taken for regression testing after completing the three sprin
 
 The back-end of the web application has been deployed on Heroku. The CI/CD pipeline has been followed for deployment wherein, a successful push made to the master branch of the github repository, runs a github action. A series of unit tests are then run after. Only after the passing of these tests successfully, the latest code is deployed positively on Heroku. This approach has been adopted to ensure better development practices which involve continuous and quick delivery of the right code and new features into production along with regular constrained checks of bugs and fixing them simultaneously.
 
-## Testing
+## <img height="40" width="40" src="https://user-images.githubusercontent.com/48960420/143775173-cc98ffe5-879e-4e97-b760-dc6a714fd4f6.png"> Testing
+
 Automated Testing for the project was done by using Chai and Mocha. Chai is a TDD assertion library for Node.js and the browser. Mocha is a test framework of Javascript that runs on Node.js. Both of these paired up turn out to be quite effective in terms of test driven development methods. A total of 28 routes were tested against 55 test cases.
 
 ## Contributor
