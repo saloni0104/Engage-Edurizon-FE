@@ -121,13 +121,13 @@ Link to backend repo: https://github.com/saloni0104/Engage-Edurizon-BE
 
 
 ## ⚙️ Installation
-- To run development server, first **cd into the backend directory** then run -
-```bash
-nodemon server
-```
 - To run the web app, cd into the **frontend directory** then run -
 ```bash
 yarn start
+```
+- To run development server, first **cd into the backend directory** then run -
+```bash
+nodemon server
 ```
 - To run unit tests
 ```bash
