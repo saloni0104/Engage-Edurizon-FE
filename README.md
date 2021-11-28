@@ -1,9 +1,22 @@
 # Edurizon ~ Igniting a Better Future
 
+<p align="center">
+	<img src="https://github.com/saloni0104/Engage-Edurizon-FE/blob/master/Images/edurizon-logo-new.png" alt="Engage 21"/>
+</p>
+
 ## A submission for Microsoft Engage'21
 
 <p align="justify">Edurizon is a one-stop fully functional hosted web application for smooth and extensive collaboration and engagement between teachers and students in this virtual era of learning and education. This prototype is built using agile methodologies as a part of the Microsoft Engage Mentorship Program 2021. From seamless video conferencing for classes and submitting assignments to a discussion’s forum and an interactive office hours meet, this application has some of the most essential features required to make teaching and learning a fun process remotely!
 </p>
+
+## 🔗 Important Links
+ * [Hosted Web Application](https://edurizon.netlify.app/)
+ * [Video Demo]()
+ * [Documentation](https://docs.google.com/document/d/1ayBpxThUl-LSiEbMRk6PO29Vkzs6JzKYBtJACg6FwJU/edit?usp=sharing)
+ * [UI](https://www.figma.com/file/k0gR5lXBm7D9L0JJEYSvkw/Microsoft-Engage'21---Edurizon?node-id=0%3A1)
+ * [Backend Repo (used for CICD pipeline)](https://github.com/saloni0104/Engage-Edurizon-BE)
+  
+![img](https://github.com/sharanya02/Teamix/blob/main/media/Teamix.png?raw=true)
 
 ## Features of the application
 
@@ -20,16 +33,10 @@
 6. <p align="justify">We have also created a PWA (Progressive Web App) for easy phone accessibility.</p>
 
 
-#### An attempt to keep dying Indian artifact culture alive
-
-<p align="justify">It is no secret that today some of the most flourishing handicraft and artifact industries once started as small in-house businesses and initiatives taken up by women. But often socially backward women are not given a chance to prove their mettle which leads to the economic downfall as well as heritage loss of the country. As modernisation is transforming the nation, we almost fail to appreciate India’s traditional artifact culture that it was once famous for. Simple and beautiful handmade goods are overlooked and prioritized by imported and branded fancy goods as the country is growing economically. This is an effort from our side to help preserve India’s dying craft culture and uplift the artists who deserve to get much more success and recognition behind the efforts they are putting in the form of their passion and expertise.</p>
-
-
-
 ### [Website Live!](http://edurizon.netlify.app/)
 
 
-## Project Creation
+## 🧰 Tools and Tech Stack involved
 
 ### Frontend
 
@@ -45,7 +52,7 @@
 
 Link to backend repo: https://github.com/saloni0104/Engage-Edurizon-BE
 
-### [!UI designed on Figma](https://www.figma.com/file/k0gR5lXBm7D9L0JJEYSvkw/Microsoft-Engage'21---Edurizon?node-id=0%3A1)
+### [UI designed on Figma](https://www.figma.com/file/k0gR5lXBm7D9L0JJEYSvkw/Microsoft-Engage'21---Edurizon?node-id=0%3A1)
 
 
 ### Deployment
@@ -54,11 +61,41 @@ Link to backend repo: https://github.com/saloni0104/Engage-Edurizon-BE
 2. The Project is hosted on Netlify and is live at http://edurizon.netlify.app/
 3. Backend Server is deployed using Heroku
 
-Demo Video: 
+### Demo Video: 
 
-## Project UI
-![Web-Pragati](https://github.com/TheCodeClutch/HackNagpur-Pragati/blob/master/images/Web-home.JPG)
-![PWA-Pragati](https://github.com/TheCodeClutch/HackNagpur-Pragati/blob/master/images/PWA-home.jpeg)
+
+## ⚙️ Installation
+- To run development server, first **cd into the backend directory** then run -
+```bash
+nodemon server
+```
+- To run electron app, cd into the **frontend directory** then run -
+```bash
+yarn start
+```
+- To run unit tests
+```bash
+npm run test
+```
+<br/>
+
+ 
+## 💻 Project Methodology
+
+The software was developed using **scrum framework** in **agile methodology**. 
+</br></br>
+This was done to ensure that the main focus was on the software product. The exact list of features were not exactly known since the start and hence it was very necessary that the whole process was able to accommodate change easily. 
+</br></br>
+The project was released in 2 sprints, and each sprint was further divided into 3 phases-
+
+- Planning and prototyping: I used a method of prototyping by first designing the UI on Figma and then after final approval, the implementation of it on the desktop application
+- Implementation
+- Testing and review: After each sprint, I discussed my progress with my mentors, and improved my project based on their feedback.
+
+## 📈 Deployment
+
+The backend is deployed using **Heroku**. The deployment follows a CI/CD pipeline in which, a successful push to the main branch of the github repository runs a github action which in turn runs a series of unit tests which were written, and only on passing the tests successfully the latest code is deployed to Heroku.
+
 
 ## Contributor
 
@@ -68,5 +105,10 @@ Demo Video:
    </td>
 </tr>
 </table>
+
+<p align="center">
+	Made with :heart: by <a href="https://github.com/saloni0104">Saloni Parekh</a>
+</p>
+
 
 
