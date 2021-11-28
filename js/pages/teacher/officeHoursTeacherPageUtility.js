@@ -212,7 +212,7 @@ fetch("https://edurizon.herokuapp.com/courses/getAllotedCourses", {
           document.getElementById("course-card").appendChild(parentDiv);
           setInterval(() => {
             const date = new Date();
-            const weekday = new Array(7);
+            const weekday = new Array(8);
             weekday[0] = "Sunday";
             weekday[1] = "Monday";
             weekday[2] = "Tuesday";
@@ -220,6 +220,7 @@ fetch("https://edurizon.herokuapp.com/courses/getAllotedCourses", {
             weekday[4] = "Thursday";
             weekday[5] = "Friday";
             weekday[6] = "Saturday";
+            weekday[7] = "Sunday";
             let day = weekday[date.getDay()];
             if (day === card?.OFFICE_HOUR_DAY?.trim()) {
               const startHour = Number(
