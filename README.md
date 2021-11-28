@@ -1,10 +1,14 @@
 # Edurizon (A submission for Microsoft Engage'21)
 
-<a href="https://youtu.be/YDSTkZ-Uzzw"><h2 align="center"><strong>Short 5 min Demo Video</strong></h2></a>
 
-<a href="https://edurizon.netlify.app"><h2 align="center"><strong>Website Live</strong></h2></a>
+<a href="https://youtu.be/YDSTkZ-Uzzw"><h2 align="center"><strong>** Short 5 min Demo Video</strong></h2></a>
+<h6 align="center"> ** Kindly consider the above video instead of Microsoft Form Submission Video ** </h6>
 
-<a href="https://docs.google.com/document/d/1vGeCNojOBVuFnDvJlwtrFVfO1uLVnA9AwAbrJ2t8rXs/edit?usp=sharing"><h2 align="center"><strong>Documentation</strong></h2></a>
+<p align="center">
+	<a href="https://edurizon.netlify.app"><strong><font-size="10">Website Live</font></strong></a>
+||
+<a href="https://docs.google.com/document/d/1vGeCNojOBVuFnDvJlwtrFVfO1uLVnA9AwAbrJ2t8rXs/edit?usp=sharing"><strong>Documentation</strong></a>
+</p>
 
 <p align="center">
 	<img src="https://github.com/saloni0104/Engage-Edurizon-FE/blob/master/Images/edurizon-logo-new.png" alt="Engage 21"/>
@@ -17,10 +21,33 @@
 
 ## 🔗 Important Links
  * [Hosted Web Application](https://edurizon.netlify.app/)
- * [5 min Demo Video](https://youtu.be/YDSTkZ-Uzzw)
+ * [5 min Demo Video](https://youtu.be/YDSTkZ-Uzzw) (Kindly consider this video instead of Microsoft Form Submission Video)
  * [Documentation](https://docs.google.com/document/d/1vGeCNojOBVuFnDvJlwtrFVfO1uLVnA9AwAbrJ2t8rXs/edit?usp=sharing)
  * [UI](https://www.figma.com/file/k0gR5lXBm7D9L0JJEYSvkw/Microsoft-Engage'21---Edurizon?node-id=0%3A1)
  * [Backend Repo (used for CICD pipeline)](https://github.com/saloni0104/Engage-Edurizon-BE)
+
+## ⚙️ Installation
+- To run the web app, cd into the **frontend directory** then run -
+```bash
+yarn start
+```
+- To run development server, first **cd into the backend directory** then run -
+```bash
+nodemon server
+```
+- To run unit tests
+```bash
+npm run tests
+```
+<br/>
+
+## Login Credentials for Usage
+ * Login for Student :- 
+	- Institute ID - STUD01
+	- Password - saloniparekh
+* Login for Teacher :-
+	- Institute ID - TEACH001
+	- Password - teacher
   
 ![img](https://github.com/saloni0104/Engage-Edurizon-FE/blob/master/Images/home.JPG)
 
@@ -118,22 +145,6 @@ Link to backend repo: https://github.com/saloni0104/Engage-Edurizon-BE
 
 
 ### [5 min Demo Video](https://youtu.be/YDSTkZ-Uzzw) 
-
-
-## ⚙️ Installation
-- To run the web app, cd into the **frontend directory** then run -
-```bash
-yarn start
-```
-- To run development server, first **cd into the backend directory** then run -
-```bash
-nodemon server
-```
-- To run unit tests
-```bash
-npm run tests
-```
-<br/>
 
  
 ## 💻 Project Methodology
