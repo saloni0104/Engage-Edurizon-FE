@@ -27,7 +27,6 @@ const populateUI = (assignments) => {
       completedAssignments.push(course.COURSE_ID);
     }
   });
-  console.log(completedAssignments);
   courseAssignments.forEach((assignment) => {
     if (
       completedAssignments.indexOf(assignment.value?.COURSE_ID) !== -1 &&
@@ -131,7 +130,7 @@ const fileUploadHandler = (event) => {
 
   //Submitting Assignment Fetch Call
 
-  document.getElementById("submit-btn").value = "Loading...";
+  event.target.value = "Loading...";
   formData.append("file", input.files[0], input.files[0].name);
   formData.append(
     "courseId",
@@ -148,7 +147,6 @@ const fileUploadHandler = (event) => {
       return response.json();
     })
     .then((response) => {
-      console.log(response);
       if (response.message) {
         Swal.fire({
           icon: "success",
@@ -165,7 +163,6 @@ const fileUploadHandler = (event) => {
       }
     })
     .catch((err) => {
-      console.log(err);
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -173,7 +170,7 @@ const fileUploadHandler = (event) => {
       });
     })
     .finally(() => {
-      document.getElementById("submit-btn").value = "Choose file";
+      event.target.value = "Submit";
     });
 };
 
