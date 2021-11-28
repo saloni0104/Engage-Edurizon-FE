@@ -146,17 +146,17 @@ Last two days were taken for regression testing after completing the three sprin
 
 ## 📈 Deployment
 
-The back-end of the web application has been deployed on Heroku. The CI/CD pipeline has been followed for deployment wherein, a successful push made to the master branch of the github repository, runs a github action. A series of unit tests are then run after. Only after the passing of these tests successfully, the latest code is deployed positively on Heroku. This approach has been adopted to ensure better development practices which involve continuous and quick delivery of the right code and new features into production along with regular constrained checks of bugs and fixing them simultaneously.
+<p align="justify"> The back-end of the web application has been deployed on Heroku. The CI/CD pipeline has been followed for deployment wherein, a successful push made to the master branch of the github repository, runs a github action. A series of unit tests are then run after. Only after the passing of these tests successfully, the latest code is deployed positively on Heroku. This approach has been adopted to ensure better development practices which involve continuous and quick delivery of the right code and new features into production along with regular constrained checks of bugs and fixing them simultaneously. </p>
 
 ## <img height="40" width="40" src="https://user-images.githubusercontent.com/48960420/143775173-cc98ffe5-879e-4e97-b760-dc6a714fd4f6.png"> Testing
 
-Automated Testing for the project was done by using Chai and Mocha. Chai is a TDD assertion library for Node.js and the browser. Mocha is a test framework of Javascript that runs on Node.js. Both of these paired up turn out to be quite effective in terms of test driven development methods. A total of 28 routes were tested against 55 test cases.
+<p align="justify"> Automated Testing for the project was done by using Chai and Mocha. Chai is a TDD assertion library for Node.js and the browser. Mocha is a test framework of Javascript that runs on Node.js. Both of these paired up turn out to be quite effective in terms of test driven development methods. A total of 28 routes were tested against 55 test cases. </p>
 
 ## Contributor
 
 <table>
   <tr>
-    <td align="center"><a href="http://github.com/saloni0104"><img src="https://github.com/TheCodeClutch/HackNagpur-Pragati/blob/master/images/saloni.PNG" width="200px;"  height="200px;" alt=""/><br /><sub><b>Saloni Parekh</b></sub></a><br />
+    <td align="center"><a href="http://github.com/saloni0104"><img src="https://avatars.githubusercontent.com/u/48960420?s=400&u=eafcf09881c7566df859009c3a2f6cd4e7f50829&v=4.PNG" width="200px;"  height="200px;" alt=""/><br /><sub><b>Saloni Parekh</b></sub></a><br />
    </td>
 </tr>
 </table>
