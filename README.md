@@ -1,6 +1,6 @@
 # Edurizon (A submission for Microsoft Engage'21)
 
-<a href="https://drive.google.com/file/d/1DRHyvoA9Ao97ZDX8pCyR6Vbe_KULlpYT/view?usp=sharing"><h2 align="center"><strong>Short 5 min Demo Video</strong></h2></a>
+<a href="https://youtu.be/YDSTkZ-Uzzw"><h2 align="center"><strong>Short 5 min Demo Video</strong></h2></a>
 
 <a href="https://edurizon.netlify.app"><h2 align="center"><strong>Website Live</strong></h2></a>
 
@@ -15,7 +15,7 @@
 
 ## 🔗 Important Links
  * [Hosted Web Application](https://edurizon.netlify.app/)
- * [5 min Demo Video](https://drive.google.com/file/d/1DRHyvoA9Ao97ZDX8pCyR6Vbe_KULlpYT/view?usp=sharing)
+ * [5 min Demo Video](https://youtu.be/YDSTkZ-Uzzw)
  * [Documentation](https://docs.google.com/document/d/1vGeCNojOBVuFnDvJlwtrFVfO1uLVnA9AwAbrJ2t8rXs/edit?usp=sharing)
  * [UI](https://www.figma.com/file/k0gR5lXBm7D9L0JJEYSvkw/Microsoft-Engage'21---Edurizon?node-id=0%3A1)
  * [Backend Repo (used for CICD pipeline)](https://github.com/saloni0104/Engage-Edurizon-BE)
@@ -115,7 +115,7 @@ Link to backend repo: https://github.com/saloni0104/Engage-Edurizon-BE
 1. Cloudinary
 
 
-### [5 min Demo Video](https://drive.google.com/file/d/1DRHyvoA9Ao97ZDX8pCyR6Vbe_KULlpYT/view?usp=sharing) 
+### [5 min Demo Video](https://youtu.be/YDSTkZ-Uzzw) 
 
 
 ## ⚙️ Installation
