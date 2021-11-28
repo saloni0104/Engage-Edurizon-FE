@@ -4,6 +4,8 @@
 
 <a href="https://edurizon.netlify.app"><h2 align="center"><strong>Website Live</strong></h2></a>
 
+<a href="https://docs.google.com/document/d/1vGeCNojOBVuFnDvJlwtrFVfO1uLVnA9AwAbrJ2t8rXs/edit?usp=sharing"><h2 align="center"><strong>Documentation</strong></h2></a>
+
 <p align="center">
 	<img src="https://github.com/saloni0104/Engage-Edurizon-FE/blob/master/Images/edurizon-logo-new.png" alt="Engage 21"/>
 </p>
