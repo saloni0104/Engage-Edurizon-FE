@@ -20,17 +20,58 @@
 
 ## Features of the application
 
-1. <p align="justify">The website revolves around enabling women to post specific home-made products they want to sell like pottery, embroidered materials, paintings, knitted clothing, healthy home-made snacks, etc. or even services that they can provide. Clients, based on their nearby locations, can view their uploaded products/services & contact them if they wish to purchase or seek services by registering their interest on the portal.</p>
+A. **Courses** <br>
+	a) _Course Page_ - Displays list of courses allotted to both students and teachers. <br>
+	b) _Course Details Page_ - <br>
+		(i) Displays list of students in the course <br>
+		(ii) Displays faculty details <br>
+		(iii)Displays virtual class meeting link <br>
+		(iv)Displays course-wise announcements i.e class schedule and class messages that are posted by the teacher. <br>
+		(v)Teachers have an additional functionality to add and remove students to a particular course <br>
+		
+B. **Assignments** <br>
+	a) _Student’s Assignments Page_ - Shows list of pending and submitted assignments for the students with relevant details like Assignment Title, Question Link, Due Date, 		attaching and submitting file option. <br>
+	b) _Teacher’s Assignments Page_ - Allows teachers to post assignments through forms and view the posted assignments for each course of theirs. <br>
+	
+C. **Grade Assignments** <br>
+	a) _Teacher’s Grade Assignments Page_ - Allows teachers to view the student submission course-wise and allot/update marks to each of the students who have posted the 		assignment. <br>
+	b) _Student’s View Grades Page_ - Students can view the grades for all their courses here along with their submitted assignment document. <br>
 
-2. <p align="justify">The Ask Desk section enables women to ask & solve their genuine queries & get advice on social & personal concerns, hence helping them to be future-ready.</p>
+D. **Student Forum** <br>
+	a) Students can search for relevant questions they are looking for(fuzzy search enabled) and their answers on this page. <br>
+	b) They can post a question if they do not find any question that they were looking for. They can answer any question on this page, on an ongoing thread or create a 		thread of answers to a particular question. <br>
+	c) This page is exclusively for the student community and their related discussions. Teachers do not have access to this page. <br>
+	d) In order to maintain the decorum amongst students, I have enabled a sentiment-analysis feature while posting any question or answer. This will prevent any student 		from posting/writing inappropriate words or using foul language by showing a popup and restricting them to post. <br>
 
-3. <p align="justify">We have implemented sentiment analysis to avoid usage of abusive words or spread of hate on the portal.</p>
+E. **Note Taking** <br>
+	a) Note taking comes in very handy, especially when you are in a teaching and learning environment. Therefore a note-taking feature has been added on every page of the 	website for quicker and easier access. <br>
+	b) Notes have the auto-saving ability along with normal text formatting options of bold, italic and underline. <br> 
 
-4. <p align="justify">To stay updated about how women are progressing in different fields, there is a section of news and articles of their latest success stories thus motivating our future entrepreneurs.</p>
+F. **Office Hours - USP Feature**
 
-5. <p align="justify">To prevent exploitation of users or misuse of the application, there’s an in-built SOS feature to connect helplines in case of emergency.</p>
+In the virtual mode of education, it often becomes very difficult for the students to reach out to their teachers for doubts and difficulties, as per their convenient timings. This increases complexities and hampers their learning, even self-esteem of students in some cases.  Keeping this in mind, this feature has been built with the following functionality: <br>
 
-6. <p align="justify">We have also created a PWA (Progressive Web App) for easy phone accessibility.</p>
+_a) For Students View -_ <br>
+	(i) Course Faculty Cabins are displayed on the layout with course names and the free office hours of the teachers. <br>
+	(ii) The red light turns to green once the office hours become active. <br>
+	(iii)The student user(circular element with initials) can easily move to the desired cabin during the active hours with the help of **arrow keys** of the keyboard. <br>
+	(iv) Once the student is inside the cabin, a popup appears, enabling them to join the meeting, where the teacher will be available. <br>
+	(v) The **Student Breakout Room** is a space where students can enjoy their break and chill with friends. Teachers do not have access to this breakout room. <br>
+
+_b) For Teacher’s View -_ <br>
+	(i) The Teacher needs to post office hours for each of their allotted courses through a form. <br>
+	(ii) Once the office hours are posted, cabins appear displaying the office hours and joining meeting link. Green indicates that their office hours have started. <br>
+
+This feature will enable the students and teacher to connect efficiently as per schedule and decrease the inconvenience of not being able to reach out and ask for availability, hence saving a lot of time and effort.  <br>
+
+G. **Video Conference Meeting** <br>
+A simple video conference meet call with very basic features: <br>
+	a) Turn camera off and on <br>
+	b) Turn microphone off and on <br>
+	c) Screen share <br>
+	d) Exit the meeting <br>
+	e) View Participants List <br>
+
 
 
 ### [Website Live!](http://edurizon.netlify.app/)
@@ -40,15 +81,17 @@
 
 ### Frontend
 
-1. Technical Stack Used: HTML, CSS, JAVASCRIPT
+1. Technical Stack Used: HTML, CSS, JavaScript
 2. Framework Used: Bootstrap
-3. Editor used: VS Code
-4. The Project can be run by opening the the index.html file leading to the home page.
+3. Parcel.js for packaging code to yield better performance
+4. Editor used: VS Code
+5. The Project can be run by opening the the index.html file leading to the home page.
 
 ### Backend
 
 1. Technical Stack Used: NodeJS, MongoDB, ExpressJS, JWT
-2. Editor Used: VS Code
+2. Postman for testing APIs
+3. Editor Used: VS Code
 
 Link to backend repo: https://github.com/saloni0104/Engage-Edurizon-BE
 
@@ -61,6 +104,14 @@ Link to backend repo: https://github.com/saloni0104/Engage-Edurizon-BE
 2. The Project is hosted on Netlify and is live at http://edurizon.netlify.app/
 3. Backend Server is deployed using Heroku
 
+### Automated Testing
+1. Chai
+2. Mocha
+
+### Media Storage
+1. Cloudinary
+
+
 ### Demo Video: 
 
 
@@ -69,13 +120,13 @@ Link to backend repo: https://github.com/saloni0104/Engage-Edurizon-BE
 ```bash
 nodemon server
 ```
-- To run electron app, cd into the **frontend directory** then run -
+- To run the web app, cd into the **frontend directory** then run -
 ```bash
 yarn start
 ```
 - To run unit tests
 ```bash
-npm run test
+npm run tests
 ```
 <br/>
 
@@ -86,16 +137,20 @@ The software was developed using **scrum framework** in **agile methodology**.
 </br></br>
 This was done to ensure that the main focus was on the software product. The exact list of features were not exactly known since the start and hence it was very necessary that the whole process was able to accommodate change easily. 
 </br></br>
-The project was released in 2 sprints, and each sprint was further divided into 3 phases-
+The project was released in 3 sprints, and each sprint was further divided into 3 phases-
 
-- Planning and prototyping: I used a method of prototyping by first designing the UI on Figma and then after final approval, the implementation of it on the desktop application
-- Implementation
-- Testing and review: After each sprint, I discussed my progress with my mentors, and improved my project based on their feedback.
+- Planning and prototyping: The UI prototype was first designed on Figma for each sprint and then the front-end was coded out on the web application.
+- Implementation: The Database structure and model was constructed as per requirements along the sprints and back-end APIs were written and integrated with the front-end.
+- Testing and review: After each sprint, a test-suite was written for the APIs and both manual and automated tests were run to check for bugs, and resolved as a whole.
+
+Last two days were taken for regression testing after completing the three sprints and the whole application was tested all-together. Minor improvements of UI were also made, along with documentation and video making.
 
 ## 📈 Deployment
 
-The backend is deployed using **Heroku**. The deployment follows a CI/CD pipeline in which, a successful push to the main branch of the github repository runs a github action which in turn runs a series of unit tests which were written, and only on passing the tests successfully the latest code is deployed to Heroku.
+The back-end of the web application has been deployed on Heroku. The CI/CD pipeline has been followed for deployment wherein, a successful push made to the master branch of the github repository, runs a github action. A series of unit tests are then run after. Only after the passing of these tests successfully, the latest code is deployed positively on Heroku. This approach has been adopted to ensure better development practices which involve continuous and quick delivery of the right code and new features into production along with regular constrained checks of bugs and fixing them simultaneously.
 
+## Testing
+Automated Testing for the project was done by using Chai and Mocha. Chai is a TDD assertion library for Node.js and the browser. Mocha is a test framework of Javascript that runs on Node.js. Both of these paired up turn out to be quite effective in terms of test driven development methods. A total of 28 routes were tested against 55 test cases.
 
 ## Contributor
 
